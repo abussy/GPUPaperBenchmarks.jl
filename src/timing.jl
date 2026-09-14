@@ -1,0 +1,137 @@
+# Timing and runner logic.
+
+"""
+    select_architecture(name::String)
+
+Return a DFTK architecture object for the requested backend.
+"""
+function select_architecture(name::String)
+    name = lowercase(name)
+    if name == "cpu"
+        return DFTK.CPU()
+    elseif name == "cuda"
+        @eval using CUDA
+        return DFTK.GPU(CuArray)
+    elseif name == "rocm" || name == "amd"
+        @eval using AMDGPU
+        return DFTK.GPU(ROCArray)
+    else
+        error("Unknown architecture: $name (choose CPU, CUDA, or ROCM)")
+    end
+end
+
+"""
+    benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
+                     architecture=DFTK.CPU(), tol=default_tol(),
+                     nrepeats=5, warmup=true, kwargs...)
+
+Run SCF, forces, and stresses for a single benchmark system `nrepeats` times
+and return a vector of named tuples. The last entry reports the average timing
+of all repeats; the remaining entries report the individual repeats.
+
+If `warmup=true` (default), a single non-recorded SCF + forces + stresses run
+is performed first to warm up the GPU/CPU code path and avoid including JIT
+compilation time in the reported results.
+"""
+function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
+                          architecture=DFTK.CPU(), tol=default_tol(),
+                          nrepeats=5, warmup=true, kwargs...)
+    f = get_system_function(name)
+    nrepeats >= 1 || error("nrepeats must be at least 1")
+
+    # Build the argument list dynamically so that unspecified Ecut/kgrid use
+    # the defaults encoded in each system file.
+    call_kwargs = Dict{Symbol, Any}(:architecture => architecture, :tol => tol)
+    merge!(call_kwargs, kwargs)
+    if !isnothing(Ecut)
+        call_kwargs[:Ecut] = Ecut
+    end
+    if !isnothing(kgrid)
+        call_kwargs[:kgrid] = kgrid
+    end
+
+    # Non-recorded warm-up run to avoid measuring GPU JIT / CPU compilation.
+    if warmup
+        result_warmup = f(; call_kwargs...)
+        scfres_warmup = result_warmup.scfres
+        compute_forces_cart(scfres_warmup)
+        compute_stresses_cart(scfres_warmup)
+    end
+
+    repeats = []
+    for rep in 1:nrepeats
+        t_scf = @elapsed result = f(; call_kwargs...)
+        scfres = result.scfres
+        t_forces = @elapsed compute_forces_cart(scfres)
+        t_stresses = @elapsed compute_stresses_cart(scfres)
+
+        basis = scfres.basis
+        model = basis.model
+        push!(repeats, (
+            system = name,
+            repeat = string(rep),
+            natoms = length(model.atoms),
+            nelectrons = model.n_electrons,
+            Ecut = basis.Ecut,
+            kgrid = join(basis.kgrid.kgrid_size, "x"),
+            architecture = string(typeof(architecture)),
+            t_scf = t_scf,
+            t_forces = t_forces,
+            t_stresses = t_stresses,
+            energy = Float64(scfres.energies.total),
+            n_scfiter = scfres.n_iter,
+            fft_size = join(basis.fft_size, "x"),
+        ))
+    end
+
+    # Append an average row. Non-timing fields are taken from the last repeat.
+    last = repeats[end]
+    avg = (
+        system = name,
+        repeat = "avg",
+        natoms = last.natoms,
+        nelectrons = last.nelectrons,
+        Ecut = last.Ecut,
+        kgrid = last.kgrid,
+        architecture = last.architecture,
+        t_scf = mean(r.t_scf for r in repeats),
+        t_forces = mean(r.t_forces for r in repeats),
+        t_stresses = mean(r.t_stresses for r in repeats),
+        energy = last.energy,
+        n_scfiter = last.n_scfiter,
+        fft_size = last.fft_size,
+    )
+    return [repeats; avg]
+end
+
+"""
+    write_results_csv(path::String, results)
+
+Write a (possibly nested) vector of result named tuples to a CSV file.
+Nested vectors are flattened so that each repeat and each average occupies one
+row.
+"""
+function write_results_csv(path::String, results)
+    mkpath(dirname(path))
+    header = [:system, :repeat, :natoms, :nelectrons, :Ecut, :kgrid, :architecture,
+              :t_scf, :t_forces, :t_stresses, :energy, :n_scfiter, :fft_size]
+    flat = collect(Any, iterate_results(results))
+    # Build a named tuple for each row so that column order is deterministic.
+    rows = [(; (k => r[k] for k in header)...) for r in flat]
+    CSV.write(path, rows; header=string.(header))
+end
+
+"""
+    iterate_results(results)
+
+Flatten a vector of results or a vector of result vectors into a single
+iterator of rows.
+"""
+function iterate_results(results)
+    isempty(results) && return Any[]
+    if results[1] isa AbstractVector
+        return Iterators.flatten(results)
+    else
+        return results
+    end
+end

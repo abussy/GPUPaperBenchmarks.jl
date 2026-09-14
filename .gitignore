@@ -1,0 +1,7 @@
+results/
+qe_inputs/
+out/
+Manifest.toml
+*.csv
+.CondaPkg/
+*.un~
