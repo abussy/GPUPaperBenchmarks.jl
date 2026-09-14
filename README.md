@@ -61,9 +61,13 @@ result = silicon_supercell(compute_forces=true, compute_stresses=true)
 forces = result.forces
 stresses = result.stresses
 
-# GPU
+# NVIDIA GPU
 using CUDA
 result = silicon_supercell(architecture=DFTK.GPU(CuArray))
+
+# AMD GPU
+using AMDGPU
+result = silicon_supercell(architecture=DFTK.GPU(ROCArray))
 ```
 
 ## Running the full benchmark suite
@@ -84,6 +88,8 @@ Override benchmark variables:
 
 ```bash
 julia --project=. scripts/run_benchmarks.jl --Ecut=40 --kgrid=2,2,2 --architecture=CUDA
+
+julia --project=. scripts/run_benchmarks.jl --Ecut=40 --kgrid=2,2,2 --architecture=AMDGPU
 ```
 
 Run each system multiple times (default is 5) and report individual and average

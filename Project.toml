@@ -7,8 +7,8 @@ ASEconvert = "3da9722f-58c2-4165-81be-b4d7253e8fd2"
 AtomsBase = "a963bdd2-2df7-4f54-a1ee-49d51e6be12a"
 AtomsBuilder = "f5cc8831-eeb7-4288-8d9f-d6c1ddb77004"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
-Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 DFTK = "acf6eb54-70d9-11e9-0013-234b7a5f5337"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 PseudoPotentialData = "5751a51d-ac76-4487-a056-413ecf6fbe19"
@@ -19,11 +19,21 @@ TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 UnitfulAtomic = "a7773ee8-282e-5fa2-be4e-bd808c38a91a"
 
+[weakdeps]
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+AMDGPU = "21141c5a-9bdb-4563-92ae-f87d6854732e"
+
+[extensions]
+PaperBenchmarksCUDAExt = "CUDA"
+PaperBenchmarksAMDGPUExt = "AMDGPU"
+
 [compat]
 ASEconvert = "0.1, 0.2"
 AtomsBase = "0.5.2"
 AtomsBuilder = "0.2"
 CSV = "0.10"
+CUDA = "6.4.0"
+AMDGPU = "1.2.3, 2"
 DFTK = "0.8"
 PseudoPotentialData = "0.2.4, 0.3"
 Statistics = "1"

@@ -1,4 +1,22 @@
 #!/usr/bin/env julia
+
+# Load the requested GPU backend at top level, before PaperBenchmarks, so that
+# CUDA / AMDGPU (and the corresponding DFTK extensions) are available in the
+# same world age as the benchmark code.
+function _load_backend_from_args()
+    for arg in ARGS
+        startswith(arg, "--architecture=") || continue
+        arch = lowercase(split(arg, "=", limit=2)[2])
+        if arch == "cuda"
+            @eval using CUDA
+        elseif arch == "amdgpu"
+            @eval using AMDGPU
+        end
+        break
+    end
+end
+_load_backend_from_args()
+
 using PaperBenchmarks
 using Dates
 
@@ -39,7 +57,7 @@ function main()
     system_names = if isempty(system_arg) || startswith(system_arg, "--")
         list_systems()
     else
-        split(system_arg, ",")
+        String.(split(system_arg, ","))
     end
 
     kwargs = parse_kwargs(ARGS)

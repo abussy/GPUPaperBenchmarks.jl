@@ -1,22 +1,49 @@
 # Timing and runner logic.
 
+const _CUDA_PKGID = Base.PkgId(Base.UUID("052768ef-5323-5732-b1bb-66c8b64840ba"), "CUDA")
+const _AMDGPU_PKGID = Base.PkgId(Base.UUID("21141c5a-9bdb-4563-92ae-f87d6854732e"), "AMDGPU")
+
 """
-    select_architecture(name::String)
+    cuda_architecture()
+
+Return the CUDA architecture object. Extended by `PaperBenchmarksCUDAExt` when
+CUDA is loaded.
+"""
+function cuda_architecture end
+
+"""
+    amdgpu_architecture()
+
+Return the AMDGPU architecture object. Extended by `PaperBenchmarksAMDGPUExt` when
+AMDGPU is loaded.
+"""
+function amdgpu_architecture end
+
+function _require_extension(pkgid::Base.PkgId, name::String)
+    try
+        Base.require(pkgid)
+    catch e
+        error("Could not load $name. Make sure $(pkgid.name).jl is installed and loadable.")
+    end
+end
+
+"""
+    select_architecture(name::AbstractString)
 
 Return a DFTK architecture object for the requested backend.
 """
-function select_architecture(name::String)
+function select_architecture(name::AbstractString)
     name = lowercase(name)
     if name == "cpu"
         return DFTK.CPU()
     elseif name == "cuda"
-        @eval using CUDA
-        return DFTK.GPU(CuArray)
-    elseif name == "rocm" || name == "amd"
-        @eval using AMDGPU
-        return DFTK.GPU(ROCArray)
+        _require_extension(_CUDA_PKGID, "CUDA")
+        return Base.invokelatest(cuda_architecture)
+    elseif name == "amdgpu"
+        _require_extension(_AMDGPU_PKGID, "AMDGPU")
+        return Base.invokelatest(amdgpu_architecture)
     else
-        error("Unknown architecture: $name (choose CPU, CUDA, or ROCM)")
+        error("Unknown architecture: $name (choose CPU, CUDA, or AMDGPU)")
     end
 end
 
