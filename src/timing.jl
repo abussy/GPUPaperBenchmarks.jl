@@ -19,6 +19,17 @@ AMDGPU is loaded.
 """
 function amdgpu_architecture end
 
+"""
+    reclaim_memory(architecture)
+
+Reclaim memory associated with `architecture`. The base implementation calls the
+Julia garbage collector. GPU extensions overload this method to additionally
+call the vendor-specific memory-pool reclaim function after the GC.
+"""
+function reclaim_memory end
+
+reclaim_memory(::DFTK.CPU) = GC.gc(true)
+
 function _require_extension(pkgid::Base.PkgId, name::String)
     try
         Base.require(pkgid)
@@ -83,6 +94,7 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
         scfres_warmup = result_warmup.scfres
         compute_forces_cart(scfres_warmup)
         compute_stresses_cart(scfres_warmup)
+        reclaim_memory(architecture)
     end
 
     repeats = []
@@ -91,6 +103,7 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
         scfres = result.scfres
         t_forces = @elapsed compute_forces_cart(scfres)
         t_stresses = @elapsed compute_stresses_cart(scfres)
+        reclaim_memory(architecture)
 
         basis = scfres.basis
         model = basis.model
