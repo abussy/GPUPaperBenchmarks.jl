@@ -143,7 +143,9 @@ The runner always measures SCF, forces and stresses as separate timed steps.
 The `compute_forces` / `compute_stresses` flags in the individual system files
 are intended for independent use; the runner does not rely on them.
 
-Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`.
+Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
+after each system finishes, so partial results are preserved if the run is
+interrupted.
 
 ## Running with MPI
 
@@ -161,6 +163,9 @@ Run a subset of systems or override parameters exactly like the serial runner:
 ```bash
 mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl silicon_primitive,diamond --architecture=CPU --nrepeats=3
 ```
+
+As in the serial runner, rows are appended to the CSV after each system
+completes, so partial results are preserved if the run aborts.
 
 ## Adding a new system
 

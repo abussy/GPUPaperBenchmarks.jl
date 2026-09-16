@@ -144,6 +144,16 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
     return [repeats; avg]
 end
 
+const _CSV_HEADER = [:system, :repeat, :natoms, :nelectrons, :Ecut, :kgrid, :architecture,
+                       :t_scf, :t_forces, :t_stresses, :energy, :n_scfiter, :fft_size]
+
+# Convert a single result or a vector of result rows into named tuples with a
+# deterministic column order.
+function _result_rows(result)
+    flat = result isa AbstractVector ? result : [result]
+    return [(; (k => r[k] for k in _CSV_HEADER)...) for r in flat]
+end
+
 """
     write_results_csv(path::String, results)
 
@@ -153,12 +163,23 @@ row.
 """
 function write_results_csv(path::String, results)
     mkpath(dirname(path))
-    header = [:system, :repeat, :natoms, :nelectrons, :Ecut, :kgrid, :architecture,
-              :t_scf, :t_forces, :t_stresses, :energy, :n_scfiter, :fft_size]
     flat = collect(Any, iterate_results(results))
-    # Build a named tuple for each row so that column order is deterministic.
-    rows = [(; (k => r[k] for k in header)...) for r in flat]
-    CSV.write(path, rows; header=string.(header))
+    rows = _result_rows(flat)
+    CSV.write(path, rows; header=string.(_CSV_HEADER))
+end
+
+"""
+    append_results_csv(path::String, result)
+
+Append the result rows of a single benchmark system to `path`. The header is
+written only if the file does not yet exist or is empty, making this safe to
+call repeatedly as systems complete.
+"""
+function append_results_csv(path::String, result)
+    mkpath(dirname(path))
+    rows = _result_rows(result)
+    write_header = !isfile(path) || filesize(path) == 0
+    CSV.write(path, rows; header=string.(_CSV_HEADER), append=true, writeheader=write_header)
 end
 
 """

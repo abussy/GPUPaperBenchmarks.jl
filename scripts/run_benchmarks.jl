@@ -82,7 +82,8 @@ function main()
         progress = "[$isys/$nsystems]"
         @info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
         try
-            result = benchmark_system(name; kwargs...)
+            result = benchmark_system(name; nrepeats=nrepeats, warmup=warmup, kwargs...)
+            append_results_csv(output_path, result)
             push!(results, result)
             avg = result[end]
             @info "$progress done for $name" avg.t_scf avg.t_forces avg.t_stresses
@@ -91,8 +92,7 @@ function main()
         end
     end
 
-    write_results_csv(output_path, results)
-    @info "Results written to $output_path"
+    @info "Results written incrementally to $output_path"
 
     if !isempty(results)
         flat = collect(PaperBenchmarks.iterate_results(results))

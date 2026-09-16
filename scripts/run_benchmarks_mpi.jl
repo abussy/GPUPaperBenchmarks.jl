@@ -117,7 +117,7 @@ function main()
         local err = nothing
         ok = true
         try
-            result = benchmark_system(name; kwargs...)
+            result = benchmark_system(name; nrepeats=nrepeats, warmup=warmup, kwargs...)
         catch e
             ok = false
             err = e
@@ -138,16 +138,14 @@ function main()
         end
 
         if ismaster
+            append_results_csv(output_path, result)
             push!(results, result)
             avg = result[end]
             @master_info "$progress done for $name" avg.t_scf avg.t_forces avg.t_stresses
         end
     end
 
-    if ismaster
-        write_results_csv(output_path, results)
-        @master_info "Results written to $output_path"
-    end
+    @master_info "Results written incrementally to $output_path"
     MPI.Barrier(comm)
 
     if ismaster && !isempty(results)
