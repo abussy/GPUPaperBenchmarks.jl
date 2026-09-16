@@ -19,6 +19,7 @@ _load_backend_from_args()
 
 using PaperBenchmarks
 using Dates
+using DFTK
 
 function parse_kwargs(args)
     kwargs = Dict{Symbol, Any}()
@@ -51,6 +52,9 @@ function parse_architecture(kwargs)
 end
 
 function main()
+    # Configure BLAS, FFTW and DFTK threading once at startup.
+    DFTK.setup_threading()
+
     # First positional argument can be a comma-separated list of system names.
     # Remaining arguments are --key=value kwargs forwarded to the system functions.
     system_arg = length(ARGS) >= 1 ? ARGS[1] : ""
@@ -73,15 +77,17 @@ function main()
     @info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup
 
     results = []
-    for name in system_names
-        @info "Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
+    nsystems = length(system_names)
+    for (isys, name) in enumerate(system_names)
+        progress = "[$isys/$nsystems]"
+        @info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
         try
             result = benchmark_system(name; kwargs...)
             push!(results, result)
             avg = result[end]
-            @info "  done" avg.t_scf avg.t_forces avg.t_stresses
+            @info "$progress done for $name" avg.t_scf avg.t_forces avg.t_stresses
         catch e
-            @error "  failed for $name" exception=e
+            @error "$progress failed for $name" exception=e
         end
     end
 
@@ -91,7 +97,7 @@ function main()
     if !isempty(results)
         flat = collect(PaperBenchmarks.iterate_results(results))
         avg_rows = filter(r -> r.repeat == "avg", flat)
-        @info "Average timings summary"
+        @info "Average timings summary ($(length(avg_rows))/$nsystems systems)"
         for r in avg_rows
             @info "  $(r.system)" t_scf=r.t_scf t_forces=r.t_forces t_stresses=r.t_stresses
         end
