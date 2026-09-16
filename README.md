@@ -145,6 +145,23 @@ are intended for independent use; the runner does not rely on them.
 
 Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`.
 
+## Running with MPI
+
+A separate MPI-aware runner is provided in `scripts/run_benchmarks_mpi.jl`.
+DFTK will distribute the workload across MPI ranks (typically over k-points).
+All progress logging and the CSV output are emitted only by the master rank.
+If a system fails on any rank, the run aborts immediately.
+
+```bash
+mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl
+```
+
+Run a subset of systems or override parameters exactly like the serial runner:
+
+```bash
+mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl silicon_primitive,diamond --architecture=CPU --nrepeats=3
+```
+
 ## Adding a new system
 
 1. Create `src/systems/<my_system>.jl` defining a function `<my_system>(; kwargs...)`.
