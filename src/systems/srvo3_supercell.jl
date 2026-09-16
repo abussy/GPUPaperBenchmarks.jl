@@ -1,5 +1,5 @@
 """
-    srvo3_supercell(; Ecut=40, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    srvo3_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                       lattice_constant_angstrom=3.84, repeat=(3, 3, 3),
                       compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 SrVO₃ perovskite supercell. Default is a 3×3×3 repetition of the 5-atom cubic
 primitive cell (135 atoms). Returns `(; scfres, forces, stresses)`.
 """
-function srvo3_supercell(; Ecut=40, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function srvo3_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                            tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                            lattice_constant_angstrom=3.84, repeat=(3, 3, 3),
                            compute_forces=false, compute_stresses=false,

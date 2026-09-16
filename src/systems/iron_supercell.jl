@@ -1,5 +1,5 @@
 """
-    iron_supercell(; Ecut=25, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    iron_supercell(; Ecut=45, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      magmom=4.0, rattle_amplitude=0.03,
                      compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 54-atom ferromagnetic bcc iron supercell (3×3×3 repetition of the 2-atom cubic
 cell). Returns `(; scfres, forces, stresses)`.
 """
-function iron_supercell(; Ecut=25, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function iron_supercell(; Ecut=45, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           magmom=4.0, rattle_amplitude=0.03,
                           compute_forces=false, compute_stresses=false,

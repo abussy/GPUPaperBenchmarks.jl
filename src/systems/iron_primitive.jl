@@ -1,5 +1,5 @@
 """
-    iron_primitive(; Ecut=25, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+    iron_primitive(; Ecut=45, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                       magmom=4.0,
                       compute_forces=false, compute_stresses=false,
@@ -7,7 +7,7 @@
 
 1-atom primitive bcc iron cell. Returns `(; scfres, forces, stresses)`.
 """
-function iron_primitive(; Ecut=25, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+function iron_primitive(; Ecut=45, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                          tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                          magmom=4.0,
                          compute_forces=false, compute_stresses=false,

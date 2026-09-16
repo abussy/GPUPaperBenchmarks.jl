@@ -1,5 +1,5 @@
 """
-    zro2_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+    zro2_primitive(; Ecut=42, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      lattice_constant_angstrom=5.08,
                      compute_forces=false, compute_stresses=false,
@@ -7,7 +7,7 @@
 
 3-atom primitive ZrO₂ cell (fluorite). Returns `(; scfres, forces, stresses)`.
 """
-function zro2_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+function zro2_primitive(; Ecut=42, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           lattice_constant_angstrom=5.08,
                           compute_forces=false, compute_stresses=false,

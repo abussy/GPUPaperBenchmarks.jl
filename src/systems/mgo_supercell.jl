@@ -1,5 +1,5 @@
 """
-    mgo_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    mgo_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      lattice_constant_angstrom=4.21, repeat=(2, 2, 2),
                      compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 MgO rock-salt supercell. Default is a 2×2×2 repetition of the 8-atom
 conventional cell (64 atoms). Returns `(; scfres, forces, stresses)`.
 """
-function mgo_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function mgo_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           lattice_constant_angstrom=4.21, repeat=(2, 2, 2),
                           compute_forces=false, compute_stresses=false,

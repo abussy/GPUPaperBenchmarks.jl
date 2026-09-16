@@ -1,5 +1,5 @@
 """
-    zro2_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    zro2_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      lattice_constant_angstrom=5.08, repeat=(2, 2, 2),
                      compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 Cubic fluorite ZrO₂ supercell. Default is a 2×2×2 repetition of the 12-atom
 conventional cell (96 atoms). Returns `(; scfres, forces, stresses)`.
 """
-function zro2_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function zro2_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           lattice_constant_angstrom=5.08, repeat=(2, 2, 2),
                           compute_forces=false, compute_stresses=false,

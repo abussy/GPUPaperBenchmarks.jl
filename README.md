@@ -9,10 +9,42 @@ The runner automatically discovers these files and collects raw timings.
 - **Systems:** bulk primitive cells, supercells, and surface slabs, with ≤150 atoms.
 - **Functional:** PBE.
 - **Pseudopotentials:** norm-conserving UPF (`dojo.nc.sr.pbe.v0_4_1.standard.upf`).
+  Default kinetic-energy cutoffs (`Ecut`) are the highest recommended value for
+  the elements present in each system, as provided by the pseudopotential
+  library (see [PseudoDojo](https://www.pseudo-dojo.org/)).
 - **Backends:** CPU, NVIDIA CUDA, AMD ROCm.
 - **Output:** CSV with raw SCF, forces, and stresses timings.
 - **Comparison:** Quantum ESPRESSO input files can be exported from the same
   structures and parameters.
+
+## Pseudopotential cutoffs
+
+The default kinetic-energy cutoff for each system is set to the highest
+[PseudoDojo](https://www.pseudo-dojo.org/) recommended `Ecut` among the elements
+present in that system. For the `dojo.nc.sr.pbe.v0_4_1.standard.upf` pseudopotential
+set used here, the recommended values are listed in the
+[`nc-sr-04_pbe_standard.json`](https://github.com/abinit/pseudo_dojo/blob/master/website/nc-sr-04_pbe_standard.json)
+table (GitHub mirror of the PseudoDojo website data). The relevant entry for each
+element is `"hn"` — the **hints normal** value, which corresponds to the
+**standard** accuracy set.
+
+For example, the JSON entry for titanium is:
+
+```json
+"Ti": { "hl": 38.0, "hn": 42.0, "hh": 46.0, ... }
+```
+
+so the standard recommended cutoff is `42.0` Ha.
+
+The same values can be queried programmatically:
+
+```julia
+using PseudoPotentialData
+family = PseudoFamily("dojo.nc.sr.pbe.v0_4_1.standard.upf")
+recommended_cutoff(family, :Ti)  # (Ecut = 42.0, ...)
+```
+
+All cutoffs can be overridden per run via the `Ecut` keyword argument.
 
 ## Setup
 

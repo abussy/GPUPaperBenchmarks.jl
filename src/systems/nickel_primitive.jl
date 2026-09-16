@@ -1,5 +1,5 @@
 """
-    nickel_primitive(; Ecut=25, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+    nickel_primitive(; Ecut=49, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                         tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                         magmom=1.0,
                         compute_forces=false, compute_stresses=false,
@@ -7,7 +7,7 @@
 
 1-atom primitive fcc nickel cell. Returns `(; scfres, forces, stresses)`.
 """
-function nickel_primitive(; Ecut=25, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+function nickel_primitive(; Ecut=49, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                            tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                            magmom=1.0,
                            compute_forces=false, compute_stresses=false,

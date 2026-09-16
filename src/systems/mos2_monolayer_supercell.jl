@@ -1,5 +1,5 @@
 """
-    mos2_monolayer_supercell(; Ecut=30, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
+    mos2_monolayer_supercell(; Ecut=40, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                                tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                                repeat_xy=(3, 3),
                                compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 MoS₂ monolayer supercell built with ASE. Default is a 3×3 in-plane repetition
 of the primitive 3-atom monolayer (27 atoms). Returns `(; scfres, forces, stresses)`.
 """
-function mos2_monolayer_supercell(; Ecut=30, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
+function mos2_monolayer_supercell(; Ecut=40, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                                     tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                                     repeat_xy=(3, 3),
                                     compute_forces=false, compute_stresses=false,

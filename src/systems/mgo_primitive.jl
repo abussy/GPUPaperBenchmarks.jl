@@ -1,5 +1,5 @@
 """
-    mgo_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+    mgo_primitive(; Ecut=42, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      lattice_constant_angstrom=4.21,
                      compute_forces=false, compute_stresses=false,
@@ -7,7 +7,7 @@
 
 2-atom primitive MgO cell (rock-salt). Returns `(; scfres, forces, stresses)`.
 """
-function mgo_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+function mgo_primitive(; Ecut=42, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           lattice_constant_angstrom=4.21,
                           compute_forces=false, compute_stresses=false,

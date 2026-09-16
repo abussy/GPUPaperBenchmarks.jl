@@ -1,12 +1,12 @@
 """
-    silicon_primitive(; Ecut=30, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+    silicon_primitive(; Ecut=18, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                        tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                        compute_forces=false, compute_stresses=false,
                        kwargs...)
 
 2-atom primitive silicon cell (diamond cubic). Returns `(; scfres, forces, stresses)`.
 """
-function silicon_primitive(; Ecut=30, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+function silicon_primitive(; Ecut=18, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                             tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                             compute_forces=false, compute_stresses=false,
                             kwargs...)

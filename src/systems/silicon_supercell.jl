@@ -1,5 +1,5 @@
 """
-    silicon_supercell(; Ecut=30, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    silicon_supercell(; Ecut=18, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                         tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                         compute_forces=false, compute_stresses=false,
                         kwargs...)
@@ -7,7 +7,7 @@
 64-atom silicon supercell (diamond cubic, 2×2×2 repetition of the 8-atom
 cubic cell). Returns `(; scfres, forces, stresses)`.
 """
-function silicon_supercell(; Ecut=30, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function silicon_supercell(; Ecut=18, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                             tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                             compute_forces=false, compute_stresses=false,
                             kwargs...)

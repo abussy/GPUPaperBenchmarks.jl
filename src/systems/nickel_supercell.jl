@@ -1,5 +1,5 @@
 """
-    nickel_supercell(; Ecut=25, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    nickel_supercell(; Ecut=49, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                        tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                        magmom=1.0, rattle_amplitude=0.03,
                        compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 32-atom ferromagnetic fcc nickel supercell (2×2×2 repetition of the 4-atom cubic
 cell). Returns `(; scfres, forces, stresses)`.
 """
-function nickel_supercell(; Ecut=25, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function nickel_supercell(; Ecut=49, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                             tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                             magmom=1.0, rattle_amplitude=0.03,
                             compute_forces=false, compute_stresses=false,

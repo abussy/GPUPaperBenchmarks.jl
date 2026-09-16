@@ -1,5 +1,5 @@
 """
-    gold_111_slab(; Ecut=25, kgrid=(4, 4, 1), architecture=DFTK.CPU(),
+    gold_111_slab(; Ecut=38, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                     tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                     n_layers=8, n_vacuum=16, repeat_surface=(1, 1),
                     compute_forces=false, compute_stresses=false,
@@ -8,7 +8,7 @@
 Au(111) slab built with ASE. Default is a 24-layer slab repeated 2×2 in the
 surface plane to better approximate bulk behaviour. Returns `(; scfres, forces, stresses)`.
 """
-function gold_111_slab(; Ecut=25, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
+function gold_111_slab(; Ecut=38, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           n_layers=24, n_vacuum=16, repeat_surface=(2, 2),
                           compute_forces=false, compute_stresses=false,

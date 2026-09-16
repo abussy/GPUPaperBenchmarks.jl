@@ -1,12 +1,12 @@
 """
-    diamond_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+    diamond_supercell(; Ecut=41, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                         tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                         compute_forces=false, compute_stresses=false,
                         kwargs...)
 
 64-atom diamond supercell. Returns `(; scfres, forces, stresses)`.
 """
-function diamond_supercell(; Ecut=35, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function diamond_supercell(; Ecut=41, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                             tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                             compute_forces=false, compute_stresses=false,
                             kwargs...)

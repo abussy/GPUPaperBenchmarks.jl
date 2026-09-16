@@ -1,16 +1,16 @@
 """
-    gaas_110_slab(; Ecut=25, kgrid=(4, 4, 1), architecture=DFTK.CPU(),
+    gaas_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                     tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                    n_layers=6, n_vacuum=12, a=5.6537,
+                    n_layers=24, n_vacuum=12, a=5.6537,
                     compute_forces=false, compute_stresses=false,
                     kwargs...)
 
-GaAs(110) slab built with ASE. Default is a 16-layer slab repeated 2×2 in the
-surface plane to better approximate bulk behaviour. Returns `(; scfres, forces, stresses)`.
+GaAs(110) slab built with ASE. Default is a 24-layer slab (no surface repeat).
+Returns `(; scfres, forces, stresses)`.
 """
-function gaas_110_slab(; Ecut=25, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
+function gaas_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                          n_layers=16, n_vacuum=12, a=5.6537,
+                          n_layers=24, n_vacuum=12, a=5.6537,
                           compute_forces=false, compute_stresses=false,
                           kwargs...)
     ase_build = pyimport("ase.build")

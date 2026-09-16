@@ -1,12 +1,12 @@
 """
-    diamond_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+    diamond_primitive(; Ecut=41, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                        tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                        compute_forces=false, compute_stresses=false,
                        kwargs...)
 
 2-atom primitive diamond cell. Returns `(; scfres, forces, stresses)`.
 """
-function diamond_primitive(; Ecut=35, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
+function diamond_primitive(; Ecut=41, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
                             tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                             compute_forces=false, compute_stresses=false,
                             kwargs...)

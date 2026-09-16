@@ -1,5 +1,5 @@
 """
-    mos2_primitive(; Ecut=30, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
+    mos2_primitive(; Ecut=40, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                       compute_forces=false, compute_stresses=false,
                       kwargs...)
@@ -7,7 +7,7 @@
 3-atom primitive MoS₂ monolayer cell built with ASE. Returns
 `(; scfres, forces, stresses)`.
 """
-function mos2_primitive(; Ecut=30, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
+function mos2_primitive(; Ecut=40, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
                          tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                          compute_forces=false, compute_stresses=false,
                          kwargs...)
