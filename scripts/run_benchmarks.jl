@@ -126,13 +126,19 @@ function main()
 
     nrepeats = pop!(kwargs, :nrepeats, 5)
     warmup = pop!(kwargs, :warmup, true)
-    @run_info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup mpi_ranks=NPROCS
+    compute_forces = get(kwargs, :compute_forces, true)
+    compute_stresses = get(kwargs, :compute_stresses, true)
+    verbose = pop!(kwargs, :verbose, false)
+    if verbose
+        kwargs[:callback] = DFTK.ScfDefaultCallback()
+    end
+    @run_info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup compute_forces=compute_forces compute_stresses=compute_stresses verbose=verbose mpi_ranks=NPROCS
 
     results = []
     nsystems = length(system_names)
     for (isys, name) in enumerate(system_names)
         progress = "[$isys/$nsystems]"
-        @run_info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
+        @run_info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup, forces=$compute_forces, stresses=$compute_stresses) ..."
 
         local result
         local err = nothing

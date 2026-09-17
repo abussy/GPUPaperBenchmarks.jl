@@ -62,22 +62,32 @@ end
     benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
                      architecture=DFTK.CPU(), tol=default_tol(),
                      convergence::Symbol=:density,
+                     compute_forces=true, compute_stresses=true,
+                     callback=identity,
                      nrepeats=5, warmup=true, kwargs...)
 
 Run SCF, forces, and stresses for a single benchmark system `nrepeats` times
 and return a vector of named tuples. The last entry reports the average timing
 of all repeats; the remaining entries report the individual repeats.
 
+Use `compute_forces=false` or `compute_stresses=false` to skip the corresponding
+calculation; the associated timing columns are filled with `NaN`.
+
 The `convergence` keyword selects the SCF convergence criterion:
 `:density` (default), `:energy`, or `:force`. The tolerance is set by `tol`.
 
-If `warmup=true` (default), a single non-recorded SCF + forces + stresses run
-is performed first to warm up the GPU/CPU code path and avoid including JIT
-compilation time in the reported results.
+Set `callback=DFTK.ScfDefaultCallback()` to display the SCF progress log for
+each repeat.
+
+If `warmup=true` (default), a single non-recorded SCF run (plus forces and
+stresses, when requested) is performed first to warm up the GPU/CPU code path
+and avoid including JIT compilation time in the reported results.
 """
 function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
                           architecture=DFTK.CPU(), tol=default_tol(),
                           convergence::Symbol=:density,
+                          compute_forces=true, compute_stresses=true,
+                          callback=identity,
                           nrepeats=5, warmup=true, kwargs...)
     f = get_system_function(name)
     nrepeats >= 1 || error("nrepeats must be at least 1")
@@ -87,7 +97,7 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
     # Build the argument list dynamically so that unspecified Ecut/kgrid use
     # the defaults encoded in each system file.
     call_kwargs = Dict{Symbol, Any}(:architecture => architecture, :tol => tol,
-                                    :convergence => convergence)
+                                    :convergence => convergence, :callback => callback)
     merge!(call_kwargs, kwargs)
     if !isnothing(Ecut)
         call_kwargs[:Ecut] = Ecut
@@ -100,8 +110,8 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
     if warmup
         result_warmup = f(; call_kwargs...)
         scfres_warmup = result_warmup.scfres
-        compute_forces_cart(scfres_warmup)
-        compute_stresses_cart(scfres_warmup)
+        compute_forces && compute_forces_cart(scfres_warmup)
+        compute_stresses && compute_stresses_cart(scfres_warmup)
         reclaim_memory(architecture)
     end
 
@@ -109,8 +119,16 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
     for rep in 1:nrepeats
         t_scf = @elapsed result = f(; call_kwargs...)
         scfres = result.scfres
-        t_forces = @elapsed compute_forces_cart(scfres)
-        t_stresses = @elapsed compute_stresses_cart(scfres)
+        t_forces = if compute_forces
+            @elapsed compute_forces_cart(scfres)
+        else
+            NaN
+        end
+        t_stresses = if compute_stresses
+            @elapsed compute_stresses_cart(scfres)
+        else
+            NaN
+        end
         reclaim_memory(architecture)
 
         basis = scfres.basis
@@ -143,8 +161,8 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
         kgrid = last.kgrid,
         architecture = last.architecture,
         t_scf = mean(r.t_scf for r in repeats),
-        t_forces = mean(r.t_forces for r in repeats),
-        t_stresses = mean(r.t_stresses for r in repeats),
+        t_forces = compute_forces ? mean(r.t_forces for r in repeats) : NaN,
+        t_stresses = compute_stresses ? mean(r.t_stresses for r in repeats) : NaN,
         energy = last.energy,
         n_scfiter = last.n_scfiter,
         fft_size = last.fft_size,

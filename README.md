@@ -158,6 +158,22 @@ included in the reported averages. Disable it with:
 julia --project=. scripts/run_benchmarks.jl --warmup=false
 ```
 
+By default both forces and stresses are timed. Disable either calculation with:
+
+```bash
+julia --project=. scripts/run_benchmarks.jl --compute_forces=false
+julia --project=. scripts/run_benchmarks.jl --compute_stresses=false
+julia --project=. scripts/run_benchmarks.jl --compute_forces=false --compute_stresses=false
+```
+
+Skipped timing columns are filled with `NaN`.
+
+Show the full SCF progress log for each repeat with:
+
+```bash
+julia --project=. scripts/run_benchmarks.jl --verbose=true
+```
+
 ### SCF convergence criterion
 
 The default SCF convergence criterion is density-based (`:density`). You can
@@ -174,9 +190,13 @@ works when calling a system function directly:
 result = silicon_primitive(; convergence=:energy, tol=1e-10)
 ```
 
-The runner always measures SCF, forces and stresses as separate timed steps.
-The `compute_forces` / `compute_stresses` flags in the individual system files
-are intended for independent use; the runner does not rely on them.
+The runner measures SCF, forces and stresses as separate timed steps. Use the
+`--compute_forces` and `--compute_stresses` flags to skip the corresponding
+calculation. The same keywords also work when calling a system function directly:
+
+```julia
+result = silicon_primitive(; compute_forces=false, compute_stresses=true)
+```
 
 Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
 after each system finishes, so partial results are preserved if the run is
