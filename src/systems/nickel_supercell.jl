@@ -20,7 +20,7 @@ function nickel_supercell(; Ecut=49, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                       default_smearing()..., magnetic_moments)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     ρ0 = guess_density(basis, magnetic_moments)
-    scfres = self_consistent_field(basis; tol, callback, ρ=ρ0, kwargs...)
+    scfres = _run_scf(basis; tol, callback, ρ=ρ0, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

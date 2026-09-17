@@ -26,7 +26,7 @@ function gold_111_slab(; Ecut=38, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,
                       default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback, kwargs...)
+    scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

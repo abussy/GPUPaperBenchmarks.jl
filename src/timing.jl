@@ -61,11 +61,15 @@ end
 """
     benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
                      architecture=DFTK.CPU(), tol=default_tol(),
+                     convergence::Symbol=:density,
                      nrepeats=5, warmup=true, kwargs...)
 
 Run SCF, forces, and stresses for a single benchmark system `nrepeats` times
 and return a vector of named tuples. The last entry reports the average timing
 of all repeats; the remaining entries report the individual repeats.
+
+The `convergence` keyword selects the SCF convergence criterion:
+`:density` (default), `:energy`, or `:force`. The tolerance is set by `tol`.
 
 If `warmup=true` (default), a single non-recorded SCF + forces + stresses run
 is performed first to warm up the GPU/CPU code path and avoid including JIT
@@ -73,13 +77,17 @@ compilation time in the reported results.
 """
 function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
                           architecture=DFTK.CPU(), tol=default_tol(),
+                          convergence::Symbol=:density,
                           nrepeats=5, warmup=true, kwargs...)
     f = get_system_function(name)
     nrepeats >= 1 || error("nrepeats must be at least 1")
+    convergence in (:density, :energy, :force) ||
+        error("Unknown convergence criterion: $convergence (choose :density, :energy, :force)")
 
     # Build the argument list dynamically so that unspecified Ecut/kgrid use
     # the defaults encoded in each system file.
-    call_kwargs = Dict{Symbol, Any}(:architecture => architecture, :tol => tol)
+    call_kwargs = Dict{Symbol, Any}(:architecture => architecture, :tol => tol,
+                                    :convergence => convergence)
     merge!(call_kwargs, kwargs)
     if !isnothing(Ecut)
         call_kwargs[:Ecut] = Ecut

@@ -15,7 +15,7 @@ function aluminium_supercell_32(; Ecut=20, kgrid=(1, 1, 1), architecture=DFTK.CP
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,
                       default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback, kwargs...)
+    scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

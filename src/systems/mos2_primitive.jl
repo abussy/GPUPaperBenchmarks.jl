@@ -17,7 +17,7 @@ function mos2_primitive(; Ecut=40, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
 
     model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback, kwargs...)
+    scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

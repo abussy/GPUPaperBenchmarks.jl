@@ -31,11 +31,13 @@ function parse_kwargs(args)
             val_str = kv[2]
             val = if key == :kgrid
                 Tuple(parse.(Int, split(val_str, ",")))
+            elseif key == :convergence
+                Symbol(lowercase(val_str))
             elseif lowercase(val_str) in ("true", "false")
                 parse(Bool, val_str)
             elseif occursin(r"^\d+$", val_str)
                 parse(Int, val_str)
-            elseif occursin(r"^\d+\.\d+$", val_str)
+            elseif occursin(r"^\d+(\.\d+)?([eE][+-]?\d+)?$", val_str)
                 parse(Float64, val_str)
             else
                 val_str

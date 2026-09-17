@@ -143,6 +143,22 @@ included in the reported averages. Disable it with:
 julia --project=. scripts/run_benchmarks.jl --warmup=false
 ```
 
+### SCF convergence criterion
+
+The default SCF convergence criterion is density-based (`:density`). You can
+switch to energy- or force-based convergence with the `--convergence` flag:
+
+```bash
+julia --project=. scripts/run_benchmarks.jl --convergence=energy --tol=1e-10
+```
+
+Allowed values are `density` (default), `energy`, and `force`. The same keyword
+works when calling a system function directly:
+
+```julia
+result = silicon_primitive(; convergence=:energy, tol=1e-10)
+```
+
 The runner always measures SCF, forces and stresses as separate timed steps.
 The `compute_forces` / `compute_stresses` flags in the individual system files
 are intended for independent use; the runner does not rely on them.
@@ -187,7 +203,7 @@ function my_system(; Ecut=30, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
     system = bulk(:Si; cubic=true) * (2, 2, 2)
     model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback, kwargs...)
+    scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

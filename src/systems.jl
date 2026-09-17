@@ -12,6 +12,34 @@ default_smearing() = (temperature=1e-3, smearing=DFTK.Smearing.Gaussian())
 default_tol() = 1e-8
 
 """
+    default_scf_convergence(convergence::Symbol, tol)
+
+Return a DFTK convergence object for the requested criterion:
+`:density` (default), `:energy`, or `:force`.
+"""
+function default_scf_convergence(convergence::Symbol, tol)
+    convergence == :density ? ScfConvergenceDensity(tol) :
+    convergence == :energy  ? ScfConvergenceEnergy(tol) :
+    convergence == :force   ? ScfConvergenceForce(tol) :
+    error("Unknown convergence criterion: $convergence (choose :density, :energy, :force)")
+end
+
+"""
+    _run_scf(basis; tol, callback, kwargs...)
+
+Run a DFTK SCF using the benchmark default convergence criterion.
+The caller can select `:density`, `:energy`, or `:force` via the `convergence`
+keyword, or pass a custom `is_converged` object.
+"""
+function _run_scf(basis; tol, callback, kwargs...)
+    kwargs_nt = NamedTuple(kwargs)
+    convergence = get(kwargs_nt, :convergence, :density)
+    is_converged = get(kwargs_nt, :is_converged, default_scf_convergence(convergence, tol))
+    remaining = Base.structdiff(kwargs_nt, NamedTuple{(:convergence, :is_converged)})
+    self_consistent_field(basis; tol, callback, is_converged, remaining...)
+end
+
+"""
     list_systems() -> Vector{String}
 
 Return the names of all benchmark systems, derived from the filenames in

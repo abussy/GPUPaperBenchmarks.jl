@@ -13,7 +13,7 @@ function diamond_supercell(; Ecut=41, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
     system = bulk(:C; cubic=true) * (2, 2, 2)
     model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback, kwargs...)
+    scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)
