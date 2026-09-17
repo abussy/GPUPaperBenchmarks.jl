@@ -1,16 +1,17 @@
 """
     tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                     tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                    n_layers=24, n_vacuum=12, a=4.594, c=2.958,
+                    n_layers=24, vacuum=10.0, a=4.594, c=2.958,
                     compute_forces=false, compute_stresses=false,
                     callback=identity, kwargs...)
 
 Rutile TiO₂(110) slab built with ASE. Default is a 24-layer slab (no surface
-repeat). Returns `(; scfres, forces, stresses)`.
+repeat) with 10 Å of vacuum on each side (~20 Å total separation). Returns
+`(; scfres, forces, stresses)`.
 """
 function tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                          n_layers=24, n_vacuum=12, a=4.594, c=2.958,
+                          n_layers=24, vacuum=10.0, a=4.594, c=2.958,
                           compute_forces=false, compute_stresses=false,
                           callback=identity, kwargs...)
     ase_spacegroup = ASEconvert.ase.spacegroup
@@ -23,9 +24,7 @@ function tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                                        spacegroup=136,
                                        cellpar=[a, a, c, 90.0, 90.0, 90.0])
 
-    surface = ase_build.surface(bulk_tio2, (1, 1, 0), n_layers, 0; periodic=true)
-    d_vacuum = maximum(maximum, surface.cell) / n_layers * n_vacuum
-    surface = ase_build.surface(bulk_tio2, (1, 1, 0), n_layers, d_vacuum; periodic=true)
+    surface = ase_build.surface(bulk_tio2, (1, 1, 0), n_layers, vacuum; periodic=true)
     system = pyconvert(AbstractSystem, surface)
 
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,

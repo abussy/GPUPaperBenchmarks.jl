@@ -117,7 +117,7 @@ julia --project=. scripts/run_benchmarks.jl
 Run a subset of systems:
 
 ```bash
-julia --project=. scripts/run_benchmarks.jl silicon_supercell,diamond_supercell
+julia --project=. scripts/run_benchmarks.jl silicon_supercell,aluminium_supercell
 ```
 
 Override benchmark variables:
@@ -181,7 +181,7 @@ mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl
 Run a subset of systems or override parameters exactly like the serial runner:
 
 ```bash
-mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl silicon_primitive,diamond --architecture=CPU --nrepeats=3
+mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl silicon_primitive,iron_primitive --architecture=CPU --nrepeats=3
 ```
 
 As in the serial runner, rows are appended to the CSV after each system
@@ -221,7 +221,7 @@ julia --project=. scripts/export_qe.jl
 Export only selected systems:
 
 ```bash
-julia --project=. scripts/export_qe.jl silicon_supercell,diamond_supercell
+julia --project=. scripts/export_qe.jl silicon_supercell,aluminium_supercell
 ```
 
 This creates one subdirectory per system with the input file and symlinks to

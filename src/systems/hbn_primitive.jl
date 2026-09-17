@@ -1,27 +1,21 @@
 """
-    mgo_primitive(; Ecut=42, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+    hbn_primitive(; Ecut=42, kgrid=(8, 8, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                     lattice_constant_angstrom=4.21,
                      compute_forces=false, compute_stresses=false,
                      callback=identity, kwargs...)
 
-2-atom primitive MgO cell (rock-salt). Returns `(; scfres, forces, stresses)`.
+2-atom hexagonal boron nitride (hBN) monolayer cell built with ASE, with 10 Å
+of vacuum on each side (~20 Å total separation). Returns
+`(; scfres, forces, stresses)`.
 """
-function mgo_primitive(; Ecut=42, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
+function hbn_primitive(; Ecut=42, kgrid=(8, 8, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                          lattice_constant_angstrom=4.21,
                           compute_forces=false, compute_stresses=false,
                           callback=identity, kwargs...)
-    a = austrip(lattice_constant_angstrom * u"Å")
-    # Primitive FCC lattice vectors for rock-salt.
-    lattice = a / 2 * [0.0 1.0 1.0;
-                       1.0 0.0 1.0;
-                       1.0 1.0 0.0]
-
-    positions = [[0.0, 0.0, 0.0],
-                 [0.5, 0.5, 0.5]]
-    elements = [:Mg, :O]
-    system = _flexible_system_from_fractional(lattice, elements, positions)
+    ase_build = ASEconvert.ase.build
+    monolayer = ase_build.graphene(formula="BN", a=2.5, vacuum=10.0)
+    monolayer.pbc = (true, true, true)
+    system = pyconvert(AbstractSystem, monolayer)
 
     model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)

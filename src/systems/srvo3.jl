@@ -1,5 +1,5 @@
 """
-    srvo3(; Ecut=42, kgrid=(6, 6, 6), architecture=DFTK.CPU(),
+    srvo3(; Ecut=42, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
              tol=default_tol(), pseudopotentials=default_pseudopotentials(),
              lattice_constant_angstrom=3.84,
              compute_forces=false, compute_stresses=false,
@@ -7,7 +7,7 @@
 
 5-atom cubic SrVO₃ perovskite primitive cell. Returns `(; scfres, forces, stresses)`.
 """
-function srvo3(; Ecut=42, kgrid=(6, 6, 6), architecture=DFTK.CPU(),
+function srvo3(; Ecut=42, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                   tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                   lattice_constant_angstrom=3.84,
                   compute_forces=false, compute_stresses=false,

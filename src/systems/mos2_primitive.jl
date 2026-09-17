@@ -1,18 +1,18 @@
 """
-    mos2_primitive(; Ecut=40, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
+    mos2_primitive(; Ecut=40, kgrid=(8, 8, 1), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                       compute_forces=false, compute_stresses=false,
                       callback=identity, kwargs...)
 
-3-atom primitive MoS₂ monolayer cell built with ASE. Returns
-`(; scfres, forces, stresses)`.
+3-atom primitive MoS₂ monolayer cell built with ASE, with 10 Å of vacuum on
+each side (~20 Å total separation). Returns `(; scfres, forces, stresses)`.
 """
-function mos2_primitive(; Ecut=40, kgrid=(6, 6, 1), architecture=DFTK.CPU(),
+function mos2_primitive(; Ecut=40, kgrid=(8, 8, 1), architecture=DFTK.CPU(),
                          tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                          compute_forces=false, compute_stresses=false,
                          callback=identity, kwargs...)
     ase_build = ASEconvert.ase.build
-    monolayer = ase_build.mx2(formula="MoS2", vacuum=15.0)
+    monolayer = ase_build.mx2(formula="MoS2", vacuum=10.0)
     monolayer.pbc = (true, true, true)
     system = pyconvert(AbstractSystem, monolayer)
 

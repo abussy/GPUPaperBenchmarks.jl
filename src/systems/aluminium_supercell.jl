@@ -1,12 +1,12 @@
 """
-    aluminium_supercell_108(; Ecut=20, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
-                              tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                              compute_forces=false, compute_stresses=false,
-                              callback=identity, kwargs...)
+    aluminium_supercell(; Ecut=20, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+                          tol=default_tol(), pseudopotentials=default_pseudopotentials(),
+                          compute_forces=false, compute_stresses=false,
+                          callback=identity, kwargs...)
 
 108-atom aluminium supercell (fcc, 3×3×3 repetition). Returns `(; scfres, forces, stresses)`.
 """
-function aluminium_supercell_108(; Ecut=20, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
+function aluminium_supercell(; Ecut=20, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                                    tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                                    compute_forces=false, compute_stresses=false,
                                    callback=identity, kwargs...)
