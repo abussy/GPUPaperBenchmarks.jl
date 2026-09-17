@@ -14,11 +14,13 @@ function mos2_monolayer_supercell(; Ecut=40, kgrid=(2, 2, 1), architecture=DFTK.
                                     compute_forces=false, compute_stresses=false,
                                     callback=identity, kwargs...)
     ase_build = ASEconvert.ase.build
-    monolayer = ase_build.mx2(formula="MoS2")
-    system = pyconvert(AbstractSystem, monolayer)
-    system = system * (repeat_xy..., 1)
+    monolayer = ase_build.mx2(formula="MoS2", vacuum=15.0)
+    monolayer.pbc = (true, true, true)
+    supercell = monolayer.repeat((repeat_xy..., 1))
+    system = pyconvert(AbstractSystem, supercell)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
+                      default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing

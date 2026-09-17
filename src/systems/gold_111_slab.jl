@@ -19,7 +19,7 @@ function gold_111_slab(; Ecut=38, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
     d_vacuum = maximum(maximum, surface.cell) / n_layers * n_vacuum
     surface = ase_build.surface(bulk_ase, (1, 1, 1), n_layers, d_vacuum; periodic=true)
     if repeat_surface != (1, 1)
-        surface = surface * Tuple([repeat_surface...; 1])
+        surface = surface.repeat((repeat_surface..., 1))
     end
     system = pyconvert(AbstractSystem, surface)
 

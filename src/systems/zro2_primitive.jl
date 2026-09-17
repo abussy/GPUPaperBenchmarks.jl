@@ -24,7 +24,8 @@ function zro2_primitive(; Ecut=42, kgrid=(4, 4, 4), architecture=DFTK.CPU(),
     elements = [:Zr, :O, :O]
     system = _flexible_system_from_fractional(lattice, elements, positions)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
+                      default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing

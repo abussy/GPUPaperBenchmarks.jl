@@ -19,7 +19,7 @@ function tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
     # Rutile TiO2: space group P42/mnm (136).
     # Ti at (0, 0, 0), O at (0.305, 0.305, 0).
     bulk_tio2 = ase_spacegroup.crystal(symbols=["Ti", "O"],
-                                       basis=[(0.0, 0.0, 0.0), (0.305, 0.305, 0.0)],
+                                       basis=[0.0 0.0 0.0; 0.305 0.305 0.0],
                                        spacegroup=136,
                                        cellpar=[a, a, c, 90.0, 90.0, 90.0])
 
