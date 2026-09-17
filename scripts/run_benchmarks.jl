@@ -17,6 +17,50 @@ function _load_backend_from_args()
 end
 _load_backend_from_args()
 
+# MPI is a project dependency. Initialise it only when the script was launched
+# through an MPI launcher; otherwise run in serial mode with rank-0 semantics.
+using MPI
+
+function _detect_mpi_launch()
+    MPI.Initialized() || any(haskey(ENV, k) for k in (
+        "OMPI_COMM_WORLD_SIZE",      # OpenMPI
+        "PMI_SIZE",                  # MPICH / Intel MPI / Cray PALS
+        "MPICH_RANK_REORDER_DISPLAY",
+        "SLURM_NTASKS",              # Slurm srun
+        "ALPS_APP_PE",               # Cray ALPS
+        "PALS_NODE_ID",              # Cray PALS
+    ))
+end
+
+function _init_mpi()
+    if _detect_mpi_launch()
+        if !MPI.Initialized()
+            MPI.Init()
+        end
+        return MPI.COMM_WORLD
+    else
+        return nothing
+    end
+end
+
+const COMM = _init_mpi()
+const ISMASTER = isnothing(COMM) || MPI.Comm_rank(COMM) == 0
+const NPROCS = isnothing(COMM) ? 1 : MPI.Comm_size(COMM)
+
+# MPI-aware helpers that degrade to serial no-ops when COMM === nothing.
+_mpi_bcast(val, root::Integer=0) = isnothing(COMM) ? val : MPI.bcast(val, root, COMM)
+_mpi_allreduce(val, op) = isnothing(COMM) ? val : MPI.Allreduce(val, op, COMM)
+_mpi_barrier() = isnothing(COMM) || MPI.Barrier(COMM)
+_mpi_abort(code::Integer) = isnothing(COMM) ? exit(code) : MPI.Abort(COMM, code)
+
+macro run_info(args...)
+    esc(:( if ISMASTER; @info $(args...); end ))
+end
+
+macro run_error(args...)
+    esc(:( if ISMASTER; @error $(args...); end ))
+end
+
 using PaperBenchmarks
 using Dates
 using DFTK
@@ -72,38 +116,77 @@ function main()
 
     timestamp = Dates.format(now(), "yyyymmdd_HHMMSS")
     output_dir = pop!(kwargs, :output_dir, "results")
-    output_path = joinpath(string(output_dir), "timings_$(timestamp).csv")
+    output_path = if ISMASTER
+        mkpath(string(output_dir))
+        joinpath(string(output_dir), "timings_$(timestamp).csv")
+    else
+        ""
+    end
+    output_path = _mpi_bcast(output_path, 0)
 
     nrepeats = pop!(kwargs, :nrepeats, 5)
     warmup = pop!(kwargs, :warmup, true)
-    @info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup
+    @run_info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup mpi_ranks=NPROCS
 
     results = []
     nsystems = length(system_names)
     for (isys, name) in enumerate(system_names)
         progress = "[$isys/$nsystems]"
-        @info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
+        @run_info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup) ..."
+
+        local result
+        local err = nothing
+        ok = true
         try
             result = benchmark_system(name; nrepeats=nrepeats, warmup=warmup, kwargs...)
+        catch e
+            ok = false
+            err = e
+        end
+
+        if !isnothing(COMM)
+            # MPI mode: all ranks must agree on success before proceeding.
+            ok_int = ok ? 1 : 0
+            ok_int = _mpi_allreduce(ok_int, MPI.LAND)
+            ok = ok_int != 0
+        end
+
+        if !ok
+            if isnothing(COMM)
+                # Serial mode: log the error and continue with the next system.
+                @run_error "$progress failed for $name" exception=err
+                continue
+            else
+                # MPI mode: abort immediately so that no rank continues alone.
+                if ISMASTER && err !== nothing
+                    @run_error "$progress failed for $name" exception=err
+                else
+                    @run_error "$progress failed for $name (failed on at least one MPI rank)"
+                end
+                _mpi_abort(1)
+            end
+        end
+
+        if ISMASTER
             append_results_csv(output_path, result)
             push!(results, result)
             avg = result[end]
-            @info "$progress done for $name" avg.t_scf avg.t_forces avg.t_stresses
-        catch e
-            @error "$progress failed for $name" exception=e
+            @run_info "$progress done for $name" avg.t_scf avg.t_forces avg.t_stresses
         end
     end
 
-    @info "Results written incrementally to $output_path"
+    @run_info "Results written incrementally to $output_path"
+    _mpi_barrier()
 
-    if !isempty(results)
+    if ISMASTER && !isempty(results)
         flat = collect(PaperBenchmarks.iterate_results(results))
         avg_rows = filter(r -> r.repeat == "avg", flat)
-        @info "Average timings summary ($(length(avg_rows))/$nsystems systems)"
+        @run_info "Average timings summary ($(length(avg_rows))/$nsystems systems)"
         for r in avg_rows
-            @info "  $(r.system)" t_scf=r.t_scf t_forces=r.t_forces t_stresses=r.t_stresses
+            @run_info "  $(r.system)" t_scf=r.t_scf t_forces=r.t_forces t_stresses=r.t_stresses
         end
     end
+    _mpi_barrier()
 end
 
 main()

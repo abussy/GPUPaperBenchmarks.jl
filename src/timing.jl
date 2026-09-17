@@ -186,8 +186,11 @@ call repeatedly as systems complete.
 function append_results_csv(path::String, result)
     mkpath(dirname(path))
     rows = _result_rows(result)
-    write_header = !isfile(path) || filesize(path) == 0
-    CSV.write(path, rows; header=string.(_CSV_HEADER), append=true, writeheader=write_header)
+    if !isfile(path) || filesize(path) == 0
+        CSV.write(path, rows; header=string.(_CSV_HEADER))
+    else
+        CSV.write(path, rows; append=true)
+    end
 end
 
 """

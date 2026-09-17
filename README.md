@@ -106,18 +106,31 @@ using AMDGPU
 result = silicon_supercell(; architecture=DFTK.GPU(ROCArray))
 ```
 
-## Running the full benchmark suite
+## Running the benchmark suite
+
+The same runner works for both serial and MPI launches. It auto-detects an MPI
+environment and, when launched under `mpiexec`, distributes the workload across
+MPI ranks (typically over k-points). All progress logging and CSV output are
+emitted only by the master rank; if a system fails on any MPI rank, the run
+aborts immediately. In serial mode, failures are logged and the runner continues
+with the next system.
 
 Run all systems with their default parameters:
 
 ```bash
+# Serial
 julia --project=. scripts/run_benchmarks.jl
+
+# MPI
+mpiexec -n 4 julia --project=. scripts/run_benchmarks.jl
 ```
 
 Run a subset of systems:
 
 ```bash
 julia --project=. scripts/run_benchmarks.jl silicon_supercell,aluminium_supercell
+
+mpiexec -n 4 julia --project=. scripts/run_benchmarks.jl silicon_primitive,iron_primitive
 ```
 
 Override benchmark variables:
@@ -126,6 +139,8 @@ Override benchmark variables:
 julia --project=. scripts/run_benchmarks.jl --Ecut=40 --kgrid=2,2,2 --architecture=CUDA
 
 julia --project=. scripts/run_benchmarks.jl --Ecut=40 --kgrid=2,2,2 --architecture=AMDGPU
+
+mpiexec -n 4 julia --project=. scripts/run_benchmarks.jl --architecture=CPU --nrepeats=3
 ```
 
 Run each system multiple times (default is 5) and report individual and average
@@ -166,26 +181,6 @@ are intended for independent use; the runner does not rely on them.
 Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
 after each system finishes, so partial results are preserved if the run is
 interrupted.
-
-## Running with MPI
-
-A separate MPI-aware runner is provided in `scripts/run_benchmarks_mpi.jl`.
-DFTK will distribute the workload across MPI ranks (typically over k-points).
-All progress logging and the CSV output are emitted only by the master rank.
-If a system fails on any rank, the run aborts immediately.
-
-```bash
-mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl
-```
-
-Run a subset of systems or override parameters exactly like the serial runner:
-
-```bash
-mpiexec -n 4 julia --project=. scripts/run_benchmarks_mpi.jl silicon_primitive,iron_primitive --architecture=CPU --nrepeats=3
-```
-
-As in the serial runner, rows are appended to the CSV after each system
-completes, so partial results are preserved if the run aborts.
 
 ## Adding a new system
 
