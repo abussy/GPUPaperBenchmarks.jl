@@ -10,7 +10,7 @@ discovers these files and collects raw timings.
 - **Systems:** bulk primitive cells, supercells, and surface slabs, with ≤150 atoms.
 - **Functional:** PBE.
 - **Pseudopotentials:** norm-conserving UPF (`dojo.nc.sr.pbe.v0_4_1.standard.upf`).
-  Default kinetic-energy cutoffs (`Ecut`) are the highest recommended value for
+  Default kinetic-energy cutoffs (`Ecut`) are the standard recommended value for
   the elements present in each system, as provided by the pseudopotential
   library (see [PseudoDojo](https://www.pseudo-dojo.org/)).
 - **Backends:** CPU, NVIDIA CUDA, AMD ROCm.
@@ -20,7 +20,7 @@ discovers these files and collects raw timings.
 
 ## Pseudopotential cutoffs
 
-The default kinetic-energy cutoff for each system is set to the highest
+The default kinetic-energy cutoff for each system is set to the standard
 [PseudoDojo](https://www.pseudo-dojo.org/) recommended `Ecut` among the elements
 present in that system. For the `dojo.nc.sr.pbe.v0_4_1.standard.upf` pseudopotential
 set used here, the recommended values are listed in the
@@ -190,14 +190,6 @@ works when calling a system function directly:
 result = silicon_primitive(; convergence=:energy, tol=1e-10)
 ```
 
-The runner measures SCF, forces and stresses as separate timed steps. Use the
-`--compute_forces` and `--compute_stresses` flags to skip the corresponding
-calculation. The same keywords also work when calling a system function directly:
-
-```julia
-result = silicon_primitive(; compute_forces=false, compute_stresses=true)
-```
-
 Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
 after each system finishes, so partial results are preserved if the run is
 interrupted.
@@ -205,7 +197,8 @@ interrupted.
 ## Adding a new system
 
 1. Create `src/systems/<my_system>.jl` defining a function `<my_system>(; kwargs...)`.
-2. The function should build the system, run the SCF, and return `scfres`.
+2. The function should build the system, run the SCF, and return the named tuple
+   `(; scfres, forces, stresses)`.
 3. Re-run `scripts/run_benchmarks.jl`; the new system is picked up automatically.
 
 Example:
