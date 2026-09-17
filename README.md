@@ -1,8 +1,9 @@
 # GPUPaperBenchmarks.jl — DFTK paper benchmarks
 
-Standalone benchmark suite for the DFTK GPU paper. Each benchmark system is a
-self-contained DFTK input file in `src/systems/` that can be run independently.
-The runner automatically discovers these files and collects raw timings.
+Standalone benchmark suite for the DFTK GPU paper. After `using PaperBenchmarks`,
+each benchmark system is available as a function (with the same name as the file
+in `src/systems/`) and can be run independently. The runner automatically
+discovers these files and collects raw timings.
 
 ## Scope
 
@@ -86,20 +87,23 @@ result = srvo3()
 result = srvo3_supercell()
 
 # Custom parameters
-result = silicon_supercell(Ecut=40, kgrid=(2, 2, 2))
+result = silicon_supercell(; Ecut=40, kgrid=(2, 2, 2))
 
 # Compute forces and stresses as well
-result = silicon_supercell(compute_forces=true, compute_stresses=true)
+result = silicon_supercell(; compute_forces=true, compute_stresses=true)
 forces = result.forces
 stresses = result.stresses
 
+# Show SCF progress log
+result = silicon_supercell(; callback=DFTK.ScfDefaultCallback())
+
 # NVIDIA GPU
 using CUDA
-result = silicon_supercell(architecture=DFTK.GPU(CuArray))
+result = silicon_supercell(; architecture=DFTK.GPU(CuArray))
 
 # AMD GPU
 using AMDGPU
-result = silicon_supercell(architecture=DFTK.GPU(ROCArray))
+result = silicon_supercell(; architecture=DFTK.GPU(ROCArray))
 ```
 
 ## Running the full benchmark suite
@@ -179,11 +183,11 @@ Example:
 function my_system(; Ecut=30, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                      compute_forces=false, compute_stresses=false,
-                     kwargs...)
+                     callback=identity, kwargs...)
     system = bulk(:Si; cubic=true) * (2, 2, 2)
     model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback=identity, kwargs...)
+    scfres = self_consistent_field(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)

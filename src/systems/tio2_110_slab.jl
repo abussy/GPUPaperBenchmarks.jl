@@ -3,7 +3,7 @@
                     tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                     n_layers=24, n_vacuum=12, a=4.594, c=2.958,
                     compute_forces=false, compute_stresses=false,
-                    kwargs...)
+                    callback=identity, kwargs...)
 
 Rutile TiO₂(110) slab built with ASE. Default is a 24-layer slab (no surface
 repeat). Returns `(; scfres, forces, stresses)`.
@@ -12,9 +12,9 @@ function tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
                           tol=default_tol(), pseudopotentials=default_pseudopotentials(),
                           n_layers=24, n_vacuum=12, a=4.594, c=2.958,
                           compute_forces=false, compute_stresses=false,
-                          kwargs...)
-    ase_spacegroup = pyimport("ase.spacegroup")
-    ase_build = pyimport("ase.build")
+                          callback=identity, kwargs...)
+    ase_spacegroup = ASEconvert.ase.spacegroup
+    ase_build = ASEconvert.ase.build
 
     # Rutile TiO2: space group P42/mnm (136).
     # Ti at (0, 0, 0), O at (0.305, 0.305, 0).
@@ -31,7 +31,7 @@ function tio2_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,
                       default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
-    scfres = self_consistent_field(basis; tol, callback=identity, kwargs...)
+    scfres = self_consistent_field(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
     stresses = compute_stresses ? compute_stresses_cart(scfres) : nothing
     return (; scfres, forces, stresses)
