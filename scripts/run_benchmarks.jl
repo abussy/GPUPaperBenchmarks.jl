@@ -61,6 +61,10 @@ macro run_error(args...)
     esc(:( if ISMASTER; @error $(args...); end ))
 end
 
+macro run_warn(args...)
+    esc(:( if ISMASTER; @warn $(args...); end ))
+end
+
 using PaperBenchmarks
 using Dates
 using DFTK
@@ -68,25 +72,28 @@ using DFTK
 function parse_kwargs(args)
     kwargs = Dict{Symbol, Any}()
     for arg in args
-        startswith(arg, "--") || continue
-        kv = split(arg[3:end], "=", limit=2)
-        if length(kv) == 2
-            key = Symbol(kv[1])
-            val_str = kv[2]
-            val = if key == :kgrid
-                Tuple(parse.(Int, split(val_str, ",")))
-            elseif key == :convergence
-                Symbol(lowercase(val_str))
-            elseif lowercase(val_str) in ("true", "false")
-                parse(Bool, val_str)
-            elseif occursin(r"^\d+$", val_str)
-                parse(Int, val_str)
-            elseif occursin(r"^\d+(\.\d+)?([eE][+-]?\d+)?$", val_str)
-                parse(Float64, val_str)
-            else
-                val_str
+        if startswith(arg, "--")
+            kv = split(arg[3:end], "=", limit=2)
+            if length(kv) == 2
+                key = Symbol(kv[1])
+                val_str = kv[2]
+                val = if key == :kgrid
+                    Tuple(parse.(Int, split(val_str, ",")))
+                elseif key == :convergence
+                    Symbol(lowercase(val_str))
+                elseif lowercase(val_str) in ("true", "false")
+                    parse(Bool, val_str)
+                elseif occursin(r"^\d+$", val_str)
+                    parse(Int, val_str)
+                elseif occursin(r"^\d+(\.\d+)?([eE][+-]?\d+)?$", val_str)
+                    parse(Float64, val_str)
+                else
+                    val_str
+                end
+                kwargs[key] = val
             end
-            kwargs[key] = val
+        elseif occursin('=', arg)
+            @run_warn "Ignoring argument '$arg'. Did you mean '--$arg'?"
         end
     end
     return kwargs
@@ -132,13 +139,13 @@ function main()
     if verbose
         kwargs[:callback] = DFTK.ScfDefaultCallback()
     end
-    @run_info "Running DFTK paper benchmarks" systems=system_names output=output_path nrepeats=nrepeats warmup=warmup compute_forces=compute_forces compute_stresses=compute_stresses verbose=verbose mpi_ranks=NPROCS
+    @run_info "Running DFTK paper benchmarks" systems=system_names output=output_path architecture=architecture nrepeats=nrepeats warmup=warmup compute_forces=compute_forces compute_stresses=compute_stresses verbose=verbose mpi_ranks=NPROCS
 
     results = []
     nsystems = length(system_names)
     for (isys, name) in enumerate(system_names)
         progress = "[$isys/$nsystems]"
-        @run_info "$progress Benchmarking $name ($nrepeats repeats, warmup=$warmup, forces=$compute_forces, stresses=$compute_stresses) ..."
+        @run_info "$progress Benchmarking $name on $architecture ($nrepeats repeats, warmup=$warmup, forces=$compute_forces, stresses=$compute_stresses) ..."
 
         local result
         local err = nothing
