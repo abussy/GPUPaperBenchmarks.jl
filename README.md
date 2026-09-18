@@ -80,12 +80,6 @@ scfres = result.scfres
 # Primitive cell of the same material
 result = silicon_primitive()
 
-# SrVO₃ perovskite
-result = srvo3()
-
-# SrVO₃ supercell (135 atoms by default)
-result = srvo3_supercell()
-
 # Custom parameters
 result = silicon_supercell(; Ecut=40, kgrid=(2, 2, 2))
 
