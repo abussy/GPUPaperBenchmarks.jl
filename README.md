@@ -105,9 +105,8 @@ result = silicon_supercell(; architecture=DFTK.GPU(ROCArray))
 The same runner works for both serial and MPI launches. It auto-detects an MPI
 environment and, when launched under `mpiexec`, distributes the workload across
 MPI ranks (typically over k-points). All progress logging and CSV output are
-emitted only by the master rank; if a system fails on any MPI rank, the run
-aborts immediately. In serial mode, failures are logged and the runner continues
-with the next system.
+emitted only by the master rank. If a system fails, the failure is logged and
+the runner continues with the next system, both in serial and MPI mode.
 
 Run all systems with their default parameters:
 

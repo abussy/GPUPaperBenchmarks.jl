@@ -51,7 +51,6 @@ const NPROCS = isnothing(COMM) ? 1 : MPI.Comm_size(COMM)
 _mpi_bcast(val, root::Integer=0) = isnothing(COMM) ? val : MPI.bcast(val, root, COMM)
 _mpi_allreduce(val, op) = isnothing(COMM) ? val : MPI.Allreduce(val, op, COMM)
 _mpi_barrier() = isnothing(COMM) || MPI.Barrier(COMM)
-_mpi_abort(code::Integer) = isnothing(COMM) ? exit(code) : MPI.Abort(COMM, code)
 
 macro run_info(args...)
     esc(:( if ISMASTER; @info $(args...); end ))
@@ -167,19 +166,16 @@ function main()
         end
 
         if !ok
-            if isnothing(COMM)
-                # Serial mode: log the error and continue with the next system.
+            if ISMASTER && err !== nothing
                 @run_error "$progress failed for $name" exception=err
-                continue
             else
-                # MPI mode: abort immediately so that no rank continues alone.
-                if ISMASTER && err !== nothing
-                    @run_error "$progress failed for $name" exception=err
-                else
-                    @run_error "$progress failed for $name (failed on at least one MPI rank)"
-                end
-                _mpi_abort(1)
+                @run_error "$progress failed for $name (failed on at least one MPI rank)"
             end
+            # Skip the failed system and continue with the next one. In MPI mode
+            # all ranks already agreed on `ok` via the LAND reduction above, so
+            # they all advance together.
+            _mpi_barrier()
+            continue
         end
 
         if ISMASTER
