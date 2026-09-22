@@ -81,6 +81,8 @@ function parse_kwargs(args)
                     Tuple(parse.(Int, split(val_str, ",")))
                 elseif key == :convergence
                     Symbol(lowercase(val_str))
+                elseif key == :maxiter
+                    parse(Int, val_str)
                 elseif lowercase(val_str) in ("true", "false")
                     parse(Bool, val_str)
                 elseif occursin(r"^\d+$", val_str)

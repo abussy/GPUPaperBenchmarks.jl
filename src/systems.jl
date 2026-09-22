@@ -15,21 +15,25 @@ default_tol() = 1e-8
     default_scf_convergence(convergence::Symbol, tol)
 
 Return a DFTK convergence object for the requested criterion:
-`:density` (default), `:energy`, or `:force`.
+`:density` (default), `:energy`, `:force`, or `:maxiter`.
+For `:maxiter` the caller is expected to pass `tol=0.0`, so the criterion never
+fires and the SCF stops only when the requested number of iterations is reached.
 """
 function default_scf_convergence(convergence::Symbol, tol)
     convergence == :density ? ScfConvergenceDensity(tol) :
     convergence == :energy  ? ScfConvergenceEnergy(tol) :
     convergence == :force   ? ScfConvergenceForce(tol) :
-    error("Unknown convergence criterion: $convergence (choose :density, :energy, :force)")
+    convergence == :maxiter ? ScfConvergenceDensity(tol) :
+    error("Unknown convergence criterion: $convergence (choose :density, :energy, :force, :maxiter)")
 end
 
 """
     _run_scf(basis; tol, callback, kwargs...)
 
 Run a DFTK SCF using the benchmark default convergence criterion.
-The caller can select `:density`, `:energy`, or `:force` via the `convergence`
-keyword, or pass a custom `is_converged` object.
+The caller can select `:density`, `:energy`, `:force`, or `:maxiter` via the
+`convergence` keyword, or pass a custom `is_converged` object. A `maxiter`
+keyword can be passed to cap the number of SCF iterations.
 """
 function _run_scf(basis; tol, callback, kwargs...)
     kwargs_nt = NamedTuple(kwargs)

@@ -64,7 +64,7 @@ end
                      convergence::Symbol=:density,
                      compute_forces=true, compute_stresses=true,
                      callback=identity,
-                     nrepeats=5, warmup=true, kwargs...)
+                     nrepeats=5, warmup=true, maxiter=nothing, kwargs...)
 
 Run SCF, forces, and stresses for a single benchmark system `nrepeats` times
 and return a vector of named tuples. The last entry reports the average timing
@@ -82,22 +82,36 @@ each repeat.
 If `warmup=true` (default), a single non-recorded SCF run (plus forces and
 stresses, when requested) is performed first to warm up the GPU/CPU code path
 and avoid including JIT compilation time in the reported results.
+
+Set `convergence=:maxiter` together with `maxiter` to run the SCF for a fixed
+number of iterations. In this mode `tol` is forced to `0.0` so that the SCF
+stops only when `maxiter` iterations have been performed. `maxiter` can also
+be used with the other convergence criteria as a hard cap on the number of
+iterations.
 """
 function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
                           architecture=DFTK.CPU(), tol=default_tol(),
                           convergence::Symbol=:density,
                           compute_forces=true, compute_stresses=true,
                           callback=identity,
-                          nrepeats=5, warmup=true, kwargs...)
+                          nrepeats=5, warmup=true, maxiter=nothing, kwargs...)
     f = get_system_function(name)
     nrepeats >= 1 || error("nrepeats must be at least 1")
-    convergence in (:density, :energy, :force) ||
-        error("Unknown convergence criterion: $convergence (choose :density, :energy, :force)")
+    convergence in (:density, :energy, :force, :maxiter) ||
+        error("Unknown convergence criterion: $convergence (choose :density, :energy, :force, :maxiter)")
+    if convergence == :maxiter
+        isnothing(maxiter) && error("maxiter must be specified when convergence=:maxiter")
+        maxiter >= 1 || error("maxiter must be at least 1")
+        tol = 0.0
+    end
 
     # Build the argument list dynamically so that unspecified Ecut/kgrid use
     # the defaults encoded in each system file.
     call_kwargs = Dict{Symbol, Any}(:architecture => architecture, :tol => tol,
                                     :convergence => convergence, :callback => callback)
+    if !isnothing(maxiter)
+        call_kwargs[:maxiter] = maxiter
+    end
     merge!(call_kwargs, kwargs)
     if !isnothing(Ecut)
         call_kwargs[:Ecut] = Ecut

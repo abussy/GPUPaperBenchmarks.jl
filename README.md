@@ -177,11 +177,22 @@ switch to energy- or force-based convergence with the `--convergence` flag:
 julia --project=. scripts/run_benchmarks.jl --convergence=energy --tol=1e-10
 ```
 
-Allowed values are `density` (default), `energy`, and `force`. The same keyword
-works when calling a system function directly:
+Allowed values are `density` (default), `energy`, `force`, and `maxiter`. The
+`maxiter` value runs the SCF for a fixed number of iterations; in this mode
+`tol` is forced to `0.0` so the calculation stops only when the maximum number
+of iterations is reached:
+
+```bash
+julia --project=. scripts/run_benchmarks.jl --convergence=maxiter --maxiter=10
+```
+
+`maxiter` can also be combined with the other criteria as a hard cap on the
+number of SCF iterations. The same keywords work when calling a system function
+directly:
 
 ```julia
 result = silicon_primitive(; convergence=:energy, tol=1e-10)
+result = silicon_primitive(; convergence=:maxiter, maxiter=10)
 ```
 
 Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
