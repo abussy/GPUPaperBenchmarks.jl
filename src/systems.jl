@@ -8,7 +8,7 @@
 # Default shared settings.
 default_pseudopotentials() = PseudoFamily("dojo.nc.sr.pbe.v0_4_1.standard.upf")
 default_functional() = PBE()
-default_smearing() = (temperature=1e-3, smearing=DFTK.Smearing.Gaussian())
+default_smearing() = (temperature=1e-2, smearing=DFTK.Smearing.Gaussian())
 default_tol() = 1e-8
 
 """

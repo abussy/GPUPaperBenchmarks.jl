@@ -19,7 +19,8 @@ function gaas_110_slab(; Ecut=42, kgrid=(2, 2, 1), architecture=DFTK.CPU(),
     surface = ase_build.surface(bulk_ase, (1, 1, 0), n_layers, vacuum; periodic=true)
     system = pyconvert(AbstractSystem, surface)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
+                      default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing

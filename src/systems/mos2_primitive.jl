@@ -16,7 +16,8 @@ function mos2_primitive(; Ecut=40, kgrid=(8, 8, 1), architecture=DFTK.CPU(),
     monolayer.pbc = (true, true, true)
     system = pyconvert(AbstractSystem, monolayer)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
+                      default_smearing()...)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
