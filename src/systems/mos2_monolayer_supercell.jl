@@ -20,8 +20,7 @@ function mos2_monolayer_supercell(; Ecut=40, kgrid=(2, 2, 1), architecture=DFTK.
     supercell = monolayer.repeat((repeat_xy..., 1))
     system = pyconvert(AbstractSystem, supercell)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
-                      default_smearing()...)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing

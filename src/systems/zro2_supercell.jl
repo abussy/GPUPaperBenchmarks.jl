@@ -34,8 +34,7 @@ function zro2_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
     system = _flexible_system_from_fractional(lattice, elements, positions)
     system = system * Tuple(repeat)
 
-    model = model_DFT(system; functionals=default_functional(), pseudopotentials,
-                      default_smearing()...)
+    model = model_DFT(system; functionals=default_functional(), pseudopotentials)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     scfres = _run_scf(basis; tol, callback, kwargs...)
     forces = compute_forces ? compute_forces_cart(scfres) : nothing
