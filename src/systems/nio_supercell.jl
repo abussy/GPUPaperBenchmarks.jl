@@ -46,7 +46,7 @@ function nio_supercell(; Ecut=42, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
     system = _flexible_system_from_fractional(super_lattice, elements, positions)
 
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,
-                      magnetic_moments)
+                      default_smearing()..., magnetic_moments)
     basis = PlaneWaveBasis(model; Ecut, kgrid, architecture)
     ρ0 = guess_density(basis, magnetic_moments)
     scfres = _run_scf(basis; tol, callback, ρ=ρ0, kwargs...)
