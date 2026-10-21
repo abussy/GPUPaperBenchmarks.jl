@@ -28,19 +28,34 @@ function default_scf_convergence(convergence::Symbol, tol)
 end
 
 """
-    _run_scf(basis; tol, callback, kwargs...)
+    _seed_rng!(architecture, seed::Integer)
+
+Seed the random-number generator used by `architecture` with `seed`. CPU runs
+use the default Julia RNG and do nothing; GPU backends are seeded via their
+vendor-specific API so that SCF initial guesses are reproducible.
+"""
+function _seed_rng! end
+_seed_rng!(::DFTK.CPU, ::Integer) = nothing
+
+"""
+    _run_scf(basis; tol, callback, seed=42, kwargs...)
 
 Run a DFTK SCF using the benchmark default convergence criterion.
 The caller can select `:density`, `:energy`, `:force`, or `:maxiter` via the
 `convergence` keyword, or pass a custom `is_converged` object. A `maxiter`
 keyword can be passed to cap the number of SCF iterations.
+
+`seed` controls the RNG seed for the SCF initial density (default 42). Before
+the SCF starts, the RNG for the basis architecture is seeded, and
+`self_consistent_field` is called with the same `seed`.
 """
-function _run_scf(basis; tol, callback, kwargs...)
+function _run_scf(basis; tol, callback, seed::Integer=42, kwargs...)
+    _seed_rng!(basis.architecture, seed)
     kwargs_nt = NamedTuple(kwargs)
     convergence = get(kwargs_nt, :convergence, :density)
     is_converged = get(kwargs_nt, :is_converged, default_scf_convergence(convergence, tol))
     remaining = Base.structdiff(kwargs_nt, NamedTuple{(:convergence, :is_converged)})
-    self_consistent_field(basis; tol, callback, is_converged, remaining...)
+    self_consistent_field(basis; tol, callback, is_converged, seed, remaining...)
 end
 
 """

@@ -13,4 +13,8 @@ function PaperBenchmarks.reclaim_memory(::DFTK.GPU{AMDGPU.ROCArray})
     AMDGPU.HIP.reclaim()
 end
 
+function PaperBenchmarks._seed_rng!(::DFTK.GPU{AMDGPU.ROCArray}, seed::Integer)
+    AMDGPU.seed!(seed)
+end
+
 end

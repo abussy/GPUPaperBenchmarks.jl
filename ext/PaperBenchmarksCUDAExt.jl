@@ -13,4 +13,8 @@ function PaperBenchmarks.reclaim_memory(::DFTK.GPU{CUDA.CuArray})
     CUDA.reclaim()
 end
 
+function PaperBenchmarks._seed_rng!(::DFTK.GPU{CUDA.CuArray}, seed::Integer)
+    CUDA.seed!(seed)
+end
+
 end
