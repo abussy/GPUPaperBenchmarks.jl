@@ -194,9 +194,20 @@ result = silicon_primitive(; convergence=:energy, tol=1e-10)
 result = silicon_primitive(; convergence=:maxiter, maxiter=10)
 ```
 
-Results are written to `results/timings_YYYYmmdd_HHMMSS.csv`. Rows are appended
-after each system finishes, so partial results are preserved if the run is
-interrupted.
+Results are written to `results/timings_YYYYmmdd_HHMMSS.csv` by default. Use
+`--output_name` to choose a different filename inside `results/`, or
+`--output_dir` to change the output directory:
+
+```bash
+julia --project=. scripts/run_benchmarks.jl --output_name=my_choice
+# writes results/my_choice.csv
+
+julia --project=. scripts/run_benchmarks.jl --output_dir=my_runs --output_name=my_choice
+# writes my_runs/my_choice.csv
+```
+
+Rows are appended after each system finishes, so partial results are preserved
+if the run is interrupted.
 
 ## Adding a new system
 

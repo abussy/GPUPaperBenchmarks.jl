@@ -124,13 +124,25 @@ function main()
 
     timestamp = Dates.format(now(), "yyyymmdd_HHMMSS")
     output_dir = pop!(kwargs, :output_dir, "results")
+    output_name = let on = pop!(kwargs, :output_name, nothing)
+        isnothing(on) ? nothing : string(on)
+    end
     output_path = if ISMASTER
-        mkpath(string(output_dir))
-        joinpath(string(output_dir), "timings_$(timestamp).csv")
+        filename = if isnothing(output_name)
+            "timings_$(timestamp).csv"
+        elseif endswith(output_name, ".csv")
+            output_name
+        else
+            "$(output_name).csv"
+        end
+        joinpath(string(output_dir), filename)
     else
         ""
     end
     output_path = _mpi_bcast(output_path, 0)
+    if ISMASTER
+        mkpath(dirname(output_path))
+    end
 
     nrepeats = pop!(kwargs, :nrepeats, 5)
     warmup = pop!(kwargs, :warmup, true)
