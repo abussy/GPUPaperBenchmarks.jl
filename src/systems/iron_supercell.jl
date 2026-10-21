@@ -1,7 +1,7 @@
 """
     iron_supercell(; Ecut=45, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                      tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                     magmom=4.0, rattle_amplitude=0.03,
+                     magmom=4.0,
                      compute_forces=false, compute_stresses=false,
                      callback=identity, kwargs...)
 
@@ -10,11 +10,10 @@ cell). Returns `(; scfres, forces, stresses)`.
 """
 function iron_supercell(; Ecut=45, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                          tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                         magmom=4.0, rattle_amplitude=0.03,
+                         magmom=4.0,
                          compute_forces=false, compute_stresses=false,
                          callback=identity, kwargs...)
     system = bulk(:Fe; cubic=true) * (3, 3, 3)
-    rattle!(system, rattle_amplitude * u"Å")
     magnetic_moments = fill(magmom, length(system))
     model = model_DFT(system; functionals=default_functional(), pseudopotentials,
                       default_smearing()..., magnetic_moments)
