@@ -80,8 +80,9 @@ Set `callback=DFTK.ScfDefaultCallback()` to display the SCF progress log for
 each repeat.
 
 If `warmup=true` (default), a single non-recorded SCF run (plus forces and
-stresses, when requested) is performed first to warm up the GPU/CPU code path
-and avoid including JIT compilation time in the reported results.
+stresses, when requested) is performed first with `Ecut=10` and exactly three
+SCF iterations to warm up the GPU/CPU code path without incurring the cost of a
+full calculation.
 
 Set `convergence=:maxiter` together with `maxiter` to run the SCF for a fixed
 number of iterations. In this mode `tol` is forced to `0.0` so that the SCF
@@ -121,8 +122,17 @@ function benchmark_system(name::String; Ecut=nothing, kgrid=nothing,
     end
 
     # Non-recorded warm-up run to avoid measuring GPU JIT / CPU compilation.
+    # Use a cheap setting: Ecut=10 and exactly 3 SCF iterations. Forces and
+    # stresses are still computed when requested so the relevant code paths are
+    # warmed up.
     if warmup
-        result_warmup = f(; call_kwargs...)
+        warmup_kwargs = copy(call_kwargs)
+        warmup_kwargs[:Ecut] = 10
+        warmup_kwargs[:maxiter] = 3
+        warmup_kwargs[:convergence] = :maxiter
+        warmup_kwargs[:tol] = 0.0
+        delete!(warmup_kwargs, :is_converged)  # ensure maxiter is honored
+        result_warmup = f(; warmup_kwargs...)
         scfres_warmup = result_warmup.scfres
         compute_forces && compute_forces_cart(scfres_warmup)
         compute_stresses && compute_stresses_cart(scfres_warmup)
