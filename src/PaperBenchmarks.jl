@@ -15,6 +15,7 @@ using StaticArrays
 using Statistics
 using Unitful
 using UnitfulAtomic
+using PrecompileTools
 
 include("systems.jl")
 include("timing.jl")
@@ -41,5 +42,7 @@ end
 export list_systems, get_system_function, benchmark_system, select_architecture,
        write_results_csv, append_results_csv, export_qe_inputs, export_qe_system,
        default_pseudopotentials, default_functional, default_smearing, default_tol
+
+include("precompile.jl")
 
 end
