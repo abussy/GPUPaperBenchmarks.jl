@@ -1,0 +1,123 @@
+cpu-bind=MASK - nid005968, task  0  0 [113265]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005968, task  1  1 [113266]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005968, task  2  2 [113267]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005968, task  3  3 [113268]: mask 0xffffffffffffffffff set
+]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia┌ Info: Threading setup: 
+│   Threads.nthreads() = 1
+│   n_DFTK = 1
+│   n_fft = 1
+└   n_blas = 1
+┌ Info: Running DFTK paper benchmarks
+│   systems = 2-element Vector{String}: …
+│   output = "results/mod0_4rank_1thread.csv"
+│   architecture = DFTK.CPU()
+│   nrepeats = 3
+│   warmup = false
+│   compute_forces = true
+│   compute_stresses = false
+│   verbose = true
+└   mpi_ranks = 4
+[ Info: [1/2] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    1.16s
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0    848ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    149ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    181ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5    779ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    124ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0    150ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0    129ms
+  9   -8.462253627355      -13.97       -7.82   0.80    2.5    154ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    782ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    181ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   88.5ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    120ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    146ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5    130ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    461ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0    497ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0    111ms
+  9   -8.462253627355      -13.97       -7.82   0.80    2.5    146ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    109ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    178ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   90.1ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    454ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    147ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5    105ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    150ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0    800ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0    114ms
+  9   -8.462253627355      -13.97       -7.82   0.80    2.5    174ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    425ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [1/2] done for silicon_primitive
+│   avg.t_scf = 3.6295403356666665
+│   avg.t_forces = 0.09883898366666667
+└   avg.t_stresses = NaN
+[ Info: [2/2] Benchmarking gaas_110_slab on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598203752                   -0.27   0.80   12.0    2332s
+  2   -4378.500777835        0.77       -0.72   0.80    1.2     272s
+  3   -4379.990217293        0.17       -1.05   0.80    3.0     528s
+  4   -4380.480213256       -0.31       -1.18   0.80    2.0     333s
+  5   -4380.577892037       -1.01       -1.84   0.80    1.0     218s
+  6   -4380.654214867       -1.12       -2.04   0.80    1.0     220s
+  7   -4380.717222459       -1.20       -2.14   0.80    1.0     220s
+  8   -4380.756550894       -1.41       -2.28   0.80    1.2     234s
+  9   -4380.792321218       -1.45       -2.46   0.80    1.0     222s
+ 10   -4380.802614707       -1.99       -2.58   0.80    1.0     221s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598203752                   -0.27   0.80   12.0    2349s
+  2   -4378.500777835        0.77       -0.72   0.80    1.2     272s
+  3   -4379.990217293        0.17       -1.05   0.80    3.0     525s
+  4   -4380.480213256       -0.31       -1.18   0.80    2.0     331s
+  5   -4380.577892037       -1.01       -1.84   0.80    1.0     222s
+  6   -4380.654214867       -1.12       -2.04   0.80    1.0     221s
+  7   -4380.717222459       -1.20       -2.14   0.80    1.0     218s
+  8   -4380.756550894       -1.41       -2.28   0.80    1.2     231s
+  9   -4380.792321218       -1.45       -2.46   0.80    1.0     220s
+ 10   -4380.802614707       -1.99       -2.58   0.80    1.0     222s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598203752                   -0.27   0.80   12.0    2346s
+  2   -4378.500777835        0.77       -0.72   0.80    1.2     275s
+  3   -4379.990217293        0.17       -1.05   0.80    3.0     528s
+  4   -4380.480213256       -0.31       -1.18   0.80    2.0     334s
+  5   -4380.577892037       -1.01       -1.84   0.80    1.0     218s
+  6   -4380.654214867       -1.12       -2.04   0.80    1.0     220s
+  7   -4380.717222459       -1.20       -2.14   0.80    1.0     217s
+  8   -4380.756550894       -1.41       -2.28   0.80    1.2     231s
+  9   -4380.792321218       -1.45       -2.46   0.80    1.0     220s
+ 10   -4380.802614707       -1.99       -2.58   0.80    1.0     217s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [2/2] done for gaas_110_slab
+│   avg.t_scf = 4858.160093323667
+│   avg.t_forces = 99.82519859700001
+└   avg.t_stresses = NaN
+[ Info: Results written incrementally to results/mod0_4rank_1thread.csv
+[ Info: Average timings summary (2/2 systems)
+┌ Info:   silicon_primitive
+│   t_scf = 3.6295403356666665
+│   t_forces = 0.09883898366666667
+└   t_stresses = NaN
+┌ Info:   gaas_110_slab
+│   t_scf = 4858.160093323667
+│   t_forces = 99.82519859700001
+└   t_stresses = NaN

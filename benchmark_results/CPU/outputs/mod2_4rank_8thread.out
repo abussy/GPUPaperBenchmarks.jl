@@ -1,0 +1,324 @@
+cpu-bind=MASK - nid005885, task  0  0 [206152]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005885, task  1  1 [206153]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005885, task  2  2 [206154]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005885, task  3  3 [206155]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia┌ Info: Threading setup: 
+│   Threads.nthreads() = 8
+│   n_DFTK = 8
+│   n_fft = 1
+└   n_blas = 8
+┌ Info: Running DFTK paper benchmarks
+│   systems = 5-element Vector{String}: …
+│   output = "results/mod2_4rank_8thread.csv"
+│   architecture = DFTK.CPU()
+│   nrepeats = 3
+│   warmup = false
+│   compute_forces = true
+│   compute_stresses = false
+│   verbose = true
+└   mpi_ranks = 4
+[ Info: [1/5] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    1.18s
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0    964ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    100ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    232ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5   68.4ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    169ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0    145ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0    217ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5    154ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8   83.2ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    101ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   58.3ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    203ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    144ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5   65.1ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    213ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0   89.3ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0   67.6ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5    210ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    135ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7    107ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   54.6ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9    101ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8    141ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5   62.9ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1   71.2ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0    207ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0    127ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5   81.4ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8   98.1ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [1/5] done for silicon_primitive
+│   avg.t_scf = 2.3190975996666663
+│   avg.t_forces = 0.12348097166666666
+└   avg.t_stresses = NaN
+[ Info: [2/5] Benchmarking iron_supercell on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.102465706                    0.37   146.00   149.40   0.80   11.2     398s
+  2   -6768.373378982       -0.57       -0.20   142.20   148.30   0.80    2.5     290s
+  3   -6768.539855549       -0.78       -0.77   138.00   145.90   0.80    4.5     326s
+  4   -6768.555203842       -1.81       -1.08   135.60   144.30   0.80    2.0     277s
+  5   -6768.560268379       -2.30       -1.38   134.20   142.60   0.80    1.5     271s
+  6   -6768.560860442       -3.23       -1.58   133.60   142.00   0.80    1.0     263s
+  7   -6768.561351448       -3.31       -2.04   132.70   141.10   0.80    1.0     264s
+  8   -6768.561415011       -4.20       -1.87   132.50   140.80   0.80    4.0     298s
+  9   -6768.561434792       -4.70       -1.90   132.40   140.80   0.80    1.4     272s
+ 10   -6768.561647387       -3.67       -1.97   132.10   140.50   0.80    1.0     264s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.102465706                    0.37   146.00   149.40   0.80   11.2     393s
+  2   -6768.373378982       -0.57       -0.20   142.20   148.30   0.80    2.5     288s
+  3   -6768.539855549       -0.78       -0.77   138.00   145.90   0.80    4.5     327s
+  4   -6768.555203842       -1.81       -1.08   135.60   144.30   0.80    2.0     277s
+  5   -6768.560268379       -2.30       -1.38   134.20   142.60   0.80    1.5     271s
+  6   -6768.560860442       -3.23       -1.58   133.60   142.00   0.80    1.0     262s
+  7   -6768.561351448       -3.31       -2.04   132.70   141.10   0.80    1.0     262s
+  8   -6768.561415011       -4.20       -1.87   132.50   140.80   0.80    4.0     298s
+  9   -6768.561434792       -4.70       -1.90   132.40   140.80   0.80    1.4     272s
+ 10   -6768.561647387       -3.67       -1.97   132.10   140.50   0.80    1.0     263s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.102465706                    0.37   146.00   149.40   0.80   11.2     394s
+  2   -6768.373378982       -0.57       -0.20   142.20   148.30   0.80    2.5     288s
+  3   -6768.539855549       -0.78       -0.77   138.00   145.90   0.80    4.5     327s
+  4   -6768.555203842       -1.81       -1.08   135.60   144.30   0.80    2.0     278s
+  5   -6768.560268379       -2.30       -1.38   134.20   142.60   0.80    1.5     271s
+  6   -6768.560860442       -3.23       -1.58   133.60   142.00   0.80    1.0     263s
+  7   -6768.561351448       -3.31       -2.04   132.70   141.10   0.80    1.0     263s
+  8   -6768.561415011       -4.20       -1.87   132.50   140.80   0.80    4.0     298s
+  9   -6768.561434792       -4.70       -1.90   132.40   140.80   0.80    1.4     272s
+ 10   -6768.561647387       -3.67       -1.97   132.10   140.50   0.80    1.0     263s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [2/5] done for iron_supercell
+│   avg.t_scf = 3041.767534235667
+│   avg.t_forces = 23.856223633333332
+└   avg.t_stresses = NaN
+[ Info: [3/5] Benchmarking aluminium_supercell on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2946536942                   -0.45   0.80   14.8     156s
+  2   -250.3164836979       -1.66       -0.88   0.80    2.0     228s
+  3   -250.3239078177       -2.13       -2.25   0.80    7.0     233s
+  4   -250.3247333985       -3.08       -2.71   0.80    6.8     235s
+  5   -250.3247622745       -4.54       -3.25   0.80    4.0     231s
+  6   -250.3247667609       -5.35       -4.27   0.80    5.0     235s
+  7   -250.3247669514       -6.72       -4.66   0.80    7.8     240s
+  8   -250.3247669527       -8.89       -5.32   0.80    3.0     231s
+  9   -250.3247669531       -9.45       -6.34   0.80    5.5     235s
+ 10   -250.3247669531      -11.19       -7.03   0.80    6.8     239s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2946536942                   -0.45   0.80   14.8     156s
+  2   -250.3164836979       -1.66       -0.88   0.80    2.0     228s
+  3   -250.3239078177       -2.13       -2.25   0.80    7.0     233s
+  4   -250.3247333985       -3.08       -2.71   0.80    6.8     235s
+  5   -250.3247622745       -4.54       -3.25   0.80    4.0     231s
+  6   -250.3247667609       -5.35       -4.27   0.80    5.0     234s
+  7   -250.3247669514       -6.72       -4.66   0.80    7.8     240s
+  8   -250.3247669527       -8.89       -5.32   0.80    3.0     231s
+  9   -250.3247669531       -9.45       -6.34   0.80    5.5     235s
+ 10   -250.3247669531      -11.19       -7.03   0.80    6.8     238s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 4 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2946536942                   -0.45   0.80   14.8     156s
+  2   -250.3164836979       -1.66       -0.88   0.80    2.0     228s
+  3   -250.3239078177       -2.13       -2.25   0.80    7.0     233s
+  4   -250.3247333985       -3.08       -2.71   0.80    6.8     235s
+  5   -250.3247622745       -4.54       -3.25   0.80    4.0     231s
+  6   -250.3247667609       -5.35       -4.27   0.80    5.0     235s
+  7   -250.3247669514       -6.72       -4.66   0.80    7.8     239s
+  8   -250.3247669527       -8.89       -5.32   0.80    3.0     231s
+  9   -250.3247669531       -9.45       -6.34   0.80    5.5     235s
+ 10   -250.3247669531      -11.19       -7.03   0.80    6.8     239s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [3/5] done for aluminium_supercell
+│   avg.t_scf = 2383.5310202719998
+│   avg.t_forces = 14.542172912
+└   avg.t_stresses = NaN
+[ Info: [4/5] Benchmarking copt_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -281.3874323708                   -0.19    0.473    0.501   0.80    5.5    5.92s
+  2   -283.4682160411        0.32       -0.72    2.339    2.382   0.80    2.7    2.65s
+  3   -283.4663924729   +   -2.74       -0.79    2.532    2.599   0.80    3.0    2.72s
+  4   -283.4626861471   +   -2.43       -1.35    2.716    2.844   0.80    3.0    2.72s
+  5   -283.4733816818       -1.97       -1.48    2.635    2.771   0.80    1.1    1.84s
+  6   -283.4742604972       -3.06       -1.58    2.613    2.754   0.80    1.0    1.87s
+  7   -283.4741165136   +   -3.84       -1.54    2.613    2.752   0.80    1.0    1.78s
+  8   -283.4740521460   +   -4.19       -1.74    2.593    2.732   0.80    1.0    1.72s
+  9   -283.4741669511       -3.94       -2.08    2.596    2.744   0.80    1.0    1.67s
+ 10   -283.4742161887       -4.31       -2.47    2.605    2.759   0.80    1.7    1.99s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -281.3874323708                   -0.19    0.473    0.501   0.80    5.5    5.99s
+  2   -283.4682160411        0.32       -0.72    2.339    2.382   0.80    2.7    2.58s
+  3   -283.4663924729   +   -2.74       -0.79    2.532    2.599   0.80    3.0    2.85s
+  4   -283.4626861471   +   -2.43       -1.35    2.716    2.844   0.80    3.0    2.79s
+  5   -283.4733816818       -1.97       -1.48    2.635    2.771   0.80    1.1    1.84s
+  6   -283.4742604972       -3.06       -1.58    2.613    2.754   0.80    1.0    1.86s
+  7   -283.4741165136   +   -3.84       -1.54    2.613    2.752   0.80    1.0    1.70s
+  8   -283.4740521460   +   -4.19       -1.74    2.593    2.732   0.80    1.0    1.66s
+  9   -283.4741669511       -3.94       -2.08    2.596    2.744   0.80    1.0    1.69s
+ 10   -283.4742161887       -4.31       -2.47    2.605    2.759   0.80    1.7    2.05s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -281.3874323708                   -0.19    0.473    0.501   0.80    5.5    5.86s
+  2   -283.4682160411        0.32       -0.72    2.339    2.382   0.80    2.7    2.62s
+  3   -283.4663924729   +   -2.74       -0.79    2.532    2.599   0.80    3.0    2.96s
+  4   -283.4626861471   +   -2.43       -1.35    2.716    2.844   0.80    3.0    2.61s
+  5   -283.4733816818       -1.97       -1.48    2.635    2.771   0.80    1.1    1.91s
+  6   -283.4742604972       -3.06       -1.58    2.613    2.754   0.80    1.0    1.76s
+  7   -283.4741165136   +   -3.84       -1.54    2.613    2.752   0.80    1.0    1.72s
+  8   -283.4740521460   +   -4.19       -1.74    2.593    2.732   0.80    1.0    1.75s
+  9   -283.4741669511       -3.94       -2.08    2.596    2.744   0.80    1.0    1.86s
+ 10   -283.4742161887       -4.31       -2.47    2.605    2.759   0.80    1.7    2.02s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [4/5] done for copt_primitive
+│   avg.t_scf = 28.424392482000002
+│   avg.t_forces = 4.368509025333334
+└   avg.t_stresses = NaN
+[ Info: [5/5] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7   92.2ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   53.1ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9   62.9ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8   82.0ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5   59.2ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1   72.6ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0   82.2ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0   68.3ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5   98.8ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    195ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7   91.9ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   57.2ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9   65.9ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8   98.1ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5    145ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    205ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0   85.2ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0   70.7ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5   80.9ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    308ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460170443203                   -0.96   0.80    4.7   90.9ms
+  2   -8.462096671208       -2.72       -1.79   0.80    1.0   57.3ms
+  3   -8.462246087765       -3.83       -2.94   0.80    1.9   62.1ms
+  4   -8.462253564664       -5.13       -3.51   0.80    2.8   79.7ms
+  5   -8.462253623607       -7.23       -4.22   0.80    1.5    144ms
+  6   -8.462253627254       -8.44       -5.35   0.80    2.1    213ms
+  7   -8.462253627354      -10.00       -6.14   0.80    3.0   90.9ms
+  8   -8.462253627355      -12.19       -7.14   0.80    2.0   67.7ms
+  9   -8.462253627355      -13.91       -7.82   0.80    2.5   98.3ms
+ 10   -8.462253627355   +    -Inf       -9.26   0.80    1.8    128ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [5/5] done for silicon_primitive
+│   avg.t_scf = 1.2216930886666668
+│   avg.t_forces = 0.10619051933333334
+└   avg.t_stresses = NaN
+[ Info: Results written incrementally to results/mod2_4rank_8thread.csv
+[ Info: Average timings summary (5/5 systems)
+┌ Info:   silicon_primitive
+│   t_scf = 2.3190975996666663
+│   t_forces = 0.12348097166666666
+└   t_stresses = NaN
+┌ Info:   iron_supercell
+│   t_scf = 3041.767534235667
+│   t_forces = 23.856223633333332
+└   t_stresses = NaN
+┌ Info:   aluminium_supercell
+│   t_scf = 2383.5310202719998
+│   t_forces = 14.542172912
+└   t_stresses = NaN
+┌ Info:   copt_primitive
+│   t_scf = 28.424392482000002
+│   t_forces = 4.368509025333334
+└   t_stresses = NaN
+┌ Info:   silicon_primitive
+│   t_scf = 1.2216930886666668
+│   t_forces = 0.10619051933333334
+└   t_stresses = NaN

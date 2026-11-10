@@ -1,0 +1,175 @@
+cpu-bind=MASK - nid005578, task  0  0 [6355]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  1  1 [6356]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  2  2 [6357]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  3  3 [6358]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  4  4 [6359]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  5  5 [6360]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  6  6 [6361]: mask 0xffffffffffffffffff set
+cpu-bind=MASK - nid005578, task  7  7 [6362]: mask 0xffffffffffffffffff set
+]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia┌ Info: Threading setup: 
+│   Threads.nthreads() = 8
+│   n_DFTK = 8
+│   n_fft = 1
+└   n_blas = 8
+┌ Info: Running DFTK paper benchmarks
+│   systems = 2-element Vector{String}: …
+│   output = "results/mod0_8rank_8thread.csv"
+│   architecture = DFTK.CPU()
+│   nrepeats = 3
+│   warmup = false
+│   compute_forces = true
+│   compute_stresses = false
+│   verbose = true
+└   mpi_ranks = 8
+[ Info: [1/2] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460155514292                   -0.96   0.80    5.5    1.31s
+  2   -8.462096590560       -2.71       -1.79   0.80    1.0    895ms
+  3   -8.462246062053       -3.83       -2.93   0.80    2.0    423ms
+  4   -8.462253570176       -5.12       -3.54   0.80    2.9    193ms
+  5   -8.462253623874       -7.27       -4.30   0.80    1.6    291ms
+  6   -8.462253627282       -8.47       -5.39   0.80    2.1    213ms
+  7   -8.462253627355      -10.14       -6.48   0.80    2.9    311ms
+  8   -8.462253627355      -12.45       -7.31   0.80    2.5    259ms
+  9   -8.462253627355      -14.45       -8.12   0.80    2.1    168ms
+ 10   -8.462253627355      -14.75       -9.22   0.80    2.1    383ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460155514292                   -0.96   0.80    5.5    129ms
+  2   -8.462096590560       -2.71       -1.79   0.80    1.0    136ms
+  3   -8.462246062053       -3.83       -2.93   0.80    2.0    202ms
+  4   -8.462253570176       -5.12       -3.54   0.80    2.9    298ms
+  5   -8.462253623874       -7.27       -4.30   0.80    1.6    164ms
+  6   -8.462253627282       -8.47       -5.39   0.80    2.1    344ms
+  7   -8.462253627355      -10.14       -6.48   0.80    2.9    261ms
+  8   -8.462253627355      -12.45       -7.31   0.80    2.5    217ms
+  9   -8.462253627355      -14.45       -8.12   0.80    2.1    255ms
+ 10   -8.462253627355      -14.75       -9.22   0.80    2.1    274ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460155514292                   -0.96   0.80    5.5    127ms
+  2   -8.462096590560       -2.71       -1.79   0.80    1.0   87.4ms
+  3   -8.462246062053       -3.83       -2.93   0.80    2.0    149ms
+  4   -8.462253570176       -5.12       -3.54   0.80    2.9    334ms
+  5   -8.462253623874       -7.27       -4.30   0.80    1.6    208ms
+  6   -8.462253627282       -8.47       -5.39   0.80    2.1    203ms
+  7   -8.462253627355      -10.14       -6.48   0.80    2.9    188ms
+  8   -8.462253627355      -12.45       -7.31   0.80    2.5    312ms
+  9   -8.462253627355      -14.45       -8.12   0.80    2.1    167ms
+ 10   -8.462253627355      -14.75       -9.22   0.80    2.1    301ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [1/2] done for silicon_primitive
+│   avg.t_scf = 3.3378579143333336
+│   avg.t_forces = 0.097886078
+└   avg.t_stresses = NaN
+[ Info: [2/2] Benchmarking gaas_110_slab on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=false) ...
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598809387                   -0.27   0.80   12.0     369s
+  2   -4378.496972362        0.77       -0.71   0.80    1.0    48.4s
+  3   -4379.990069998        0.17       -1.04   0.80    3.0    94.6s
+  4   -4380.483329475       -0.31       -1.14   0.80    2.0    62.1s
+  5   -4380.577704290       -1.03       -1.84   0.80    1.0    45.7s
+  6   -4380.654057047       -1.12       -2.04   0.80    1.0    45.5s
+  7   -4380.716729792       -1.20       -2.14   0.80    1.0    44.6s
+  8   -4380.755680882       -1.41       -2.28   0.80    1.2    47.6s
+  9   -4380.791573380       -1.44       -2.46   0.80    1.0    44.1s
+ 10   -4380.802346309       -1.97       -2.58   0.80    1.0    44.1s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598809387                   -0.27   0.80   12.0     381s
+  2   -4378.496972362        0.77       -0.71   0.80    1.0    46.0s
+  3   -4379.990069998        0.17       -1.04   0.80    3.0     101s
+  4   -4380.483329475       -0.31       -1.14   0.80    2.0    65.6s
+  5   -4380.577704290       -1.03       -1.84   0.80    1.0    45.8s
+  6   -4380.654057047       -1.12       -2.04   0.80    1.0    44.8s
+  7   -4380.716729792       -1.20       -2.14   0.80    1.0    44.7s
+  8   -4380.755680882       -1.41       -2.28   0.80    1.2    47.1s
+  9   -4380.791573380       -1.44       -2.46   0.80    1.0    45.6s
+ 10   -4380.802346309       -1.97       -2.58   0.80    1.0    43.8s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 4 k-points over 8 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -4372.598809387                   -0.27   0.80   12.0     397s
+  2   -4378.496972362        0.77       -0.71   0.80    1.0    44.2s
+  3   -4379.990069998        0.17       -1.04   0.80    3.0     100s
+  4   -4380.483329475       -0.31       -1.14   0.80    2.0    63.1s
+  5   -4380.577704290       -1.03       -1.84   0.80    1.0    44.4s
+  6   -4380.654057047       -1.12       -2.04   0.80    1.0    46.8s
+  7   -4380.716729792       -1.20       -2.14   0.80    1.0    46.8s
+  8   -4380.755680882       -1.41       -2.28   0.80    1.2    44.8s
+  9   -4380.791573380       -1.44       -2.46   0.80    1.0    44.7s
+ 10   -4380.802346309       -1.97       -2.58   0.80    1.0    45.2s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [2/2] done for gaas_110_slab
+│   avg.t_scf = 891.2573590906667
+│   avg.t_forces = 30.491099409333334
+└   avg.t_stresses = NaN
+[ Info: Results written incrementally to results/mod0_8rank_8thread.csv
+[ Info: Average timings summary (2/2 systems)
+┌ Info:   silicon_primitive
+│   t_scf = 3.3378579143333336
+│   t_forces = 0.097886078
+└   t_stresses = NaN
+┌ Info:   gaas_110_slab
+│   t_scf = 891.2573590906667
+│   t_forces = 30.491099409333334
+└   t_stresses = NaN
