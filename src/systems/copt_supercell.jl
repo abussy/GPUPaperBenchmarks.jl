@@ -1,19 +1,21 @@
 """
     copt_supercell(; Ecut=48, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                      lattice_constant_a_angstrom=3.83, lattice_constant_c_angstrom=3.71,
+                      lattice_constant_a_angstrom=2.682, lattice_constant_c_angstrom=3.714,
                       co_magmom=1.8, pt_magmom=0.0, repeat=(2, 2, 2),
                       compute_forces=false, compute_stresses=false,
                       callback=identity, kwargs...)
 
-CoPt ferromagnetic supercell (L1₀ ordered tetragonal structure). Default is a
-2×2×2 repetition of the 2-atom primitive cell (16 atoms). Returns
+CoPt ferromagnetic supercell (L1₀, CuAu-type, space group P4/mmm). Default is
+a 2×2×2 repetition of the 2-atom primitive cell (16 atoms). The default lattice
+constants are the experimental room-temperature values for bulk L1₀ CoPt
+(`a = 2.682` Å, `c = 3.714` Å, `c/a ≈ 1.385`), as in `copt_primitive`. Returns
 `(; scfres, forces, stresses)`.
 """
 function copt_supercell(; Ecut=48, kgrid=(1, 1, 1), architecture=DFTK.CPU(),
                            tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                           lattice_constant_a_angstrom=3.83,
-                           lattice_constant_c_angstrom=3.71,
+                           lattice_constant_a_angstrom=2.682,
+                           lattice_constant_c_angstrom=3.714,
                            co_magmom=1.8, pt_magmom=0.0, repeat=(2, 2, 2),
                            compute_forces=false, compute_stresses=false,
                            callback=identity, kwargs...)

@@ -98,6 +98,49 @@ function _flexible_system_from_fractional(lattice, elements, positions)
     AtomsBase.FlexibleSystem(atoms; cell_vectors, periodicity=(true, true, true))
 end
 
+"""
+    _flexible_system_fractional(lattice_angstrom, elements, positions_frac)
+
+Build an `AtomsBase.FlexibleSystem` from a 3×3 lattice matrix in Ångström
+(columns are lattice vectors), a vector of element symbols, and fractional
+positions.
+"""
+function _flexible_system_fractional(lattice_angstrom, elements, positions_frac)
+    lattice_bohr = austrip.(lattice_angstrom * u"Å")
+    _flexible_system_from_fractional(lattice_bohr, elements, positions_frac)
+end
+
+"""
+    _supercell_fractional(lattice, elements, positions_frac, repeat)
+
+Build a supercell from a primitive cell given as a 3×3 lattice matrix (columns
+are lattice vectors, in Ångström), element symbols, and fractional positions.
+The atom ordering matches ASE's `Atoms.repeat` (the first repeat index varies
+slowest).
+"""
+function _supercell_fractional(lattice, elements, positions_frac,
+                               repeat::NTuple{3,Int})
+    n1, n2, n3 = repeat
+    all(>=(1), (n1, n2, n3)) || error("repeat entries must be positive integers")
+    super_lattice = lattice * Diagonal([float(n) for n in (n1, n2, n3)])
+    positions = Vector{Vector{Float64}}()
+    elements_super = Symbol[]
+    for i in 0:(n1 - 1), j in 0:(n2 - 1), k in 0:(n3 - 1)
+        offset = (i / n1, j / n2, k / n3)
+        for (p, e) in zip(positions_frac, elements)
+            push!(positions, p ./ (n1, n2, n3) .+ offset)
+            push!(elements_super, e)
+        end
+    end
+    _flexible_system_fractional(super_lattice, elements_super, positions)
+end
+
+# ------------------------------------------------------------------
+# Generic structure helpers. System-specific geometry builders (monolayers,
+# surface slabs) live in the corresponding files in `src/systems/`; each
+# replicates the geometry previously generated with `ASE.build` (verified
+# against the ASE output), so that no Python/conda environment is required.
+
 # Auto-include all system definition files. Each file is expected to define a
 # function with the same name as the file (without the .jl extension).
 const _SYSTEMS_DIR = joinpath(@__DIR__, "systems")

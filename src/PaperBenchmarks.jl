@@ -4,7 +4,6 @@ using DFTK
 using AtomsBase
 using AtomsBuilder
 using PseudoPotentialData
-using ASEconvert
 using CSV
 using TOML
 using Dates
@@ -24,12 +23,12 @@ include("export_qe.jl")
 # Re-export names used by the individual system builders so that
 # `using PaperBenchmarks` is enough to run/tweak systems interactively.
 using AtomsBuilder: bulk, rattle!
-using ASEconvert: AbstractSystem, pyconvert
+using AtomsBase: AbstractSystem
 using UnitfulAtomic: austrip
 using LinearAlgebra: diagm
 using PseudoPotentialData: PseudoFamily
 
-export DFTK, bulk, rattle!, AbstractSystem, pyconvert, austrip, diagm, @u_str, PseudoFamily
+export DFTK, bulk, rattle!, AbstractSystem, austrip, diagm, @u_str, PseudoFamily
 
 # Auto-export each benchmark system function so users can call e.g. silicon_primitive().
 for sys in list_systems()
