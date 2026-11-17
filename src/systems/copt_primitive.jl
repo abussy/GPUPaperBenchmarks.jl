@@ -1,19 +1,21 @@
 """
     copt_primitive(; Ecut=48, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                       tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                      lattice_constant_a_angstrom=3.83, lattice_constant_c_angstrom=3.71,
+                      lattice_constant_a_angstrom=2.682, lattice_constant_c_angstrom=3.714,
                       co_magmom=1.8, pt_magmom=0.0,
                       compute_forces=false, compute_stresses=false,
                       callback=identity, kwargs...)
 
-2-atom ferromagnetic primitive CoPt cell (L1₀ ordered tetragonal structure).
-Co sits at the origin and Pt at the body centre. Returns
-`(; scfres, forces, stresses)`.
+2-atom ferromagnetic primitive CoPt cell (L1₀, CuAu-type, space group P4/mmm).
+Alternating pure Co and Pt (001) layers: Co at the origin and Pt at the body
+centre of the primitive tetragonal cell. The default lattice constants are the
+experimental room-temperature values for bulk L1₀ CoPt (`a = 2.682` Å,
+`c = 3.714` Å, `c/a ≈ 1.385`). Returns `(; scfres, forces, stresses)`.
 """
 function copt_primitive(; Ecut=48, kgrid=(8, 8, 8), architecture=DFTK.CPU(),
                            tol=default_tol(), pseudopotentials=default_pseudopotentials(),
-                           lattice_constant_a_angstrom=3.83,
-                           lattice_constant_c_angstrom=3.71,
+                           lattice_constant_a_angstrom=2.682,
+                           lattice_constant_c_angstrom=3.714,
                            co_magmom=1.8, pt_magmom=0.0,
                            compute_forces=false, compute_stresses=false,
                            callback=identity, kwargs...)
