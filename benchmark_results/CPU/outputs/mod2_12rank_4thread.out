@@ -1,0 +1,1292 @@
+cpu-bind=MASK - nid005314, task  0  0 [178226]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  1  1 [178227]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  2  2 [178228]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  3  3 [178229]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  4  4 [178230]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  5  5 [178231]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  6  6 [178232]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  7  7 [178233]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  8  8 [178234]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task  9  9 [178235]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task 10 10 [178236]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+cpu-bind=MASK - nid005314, task 11 11 [178237]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia┌ Info: Threading setup: 
+│   Threads.nthreads() = 4
+│   n_DFTK = 4
+│   n_fft = 1
+└   n_blas = 4
+┌ Info: Running DFTK paper benchmarks
+│   systems = 5-element Vector{String}: …
+│   output = "results/mod2_12rank_4thread.csv"
+│   architecture = DFTK.CPU()
+│   nrepeats = 3
+│   warmup = false
+│   compute_forces = true
+│   compute_stresses = true
+│   verbose = true
+└   mpi_ranks = 12
+[ Info: [1/5] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5    1.20s
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0    855ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9    360ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9    180ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6   68.2ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    419ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0    460ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   58.4ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2   90.5ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    331ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   82.8ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   60.5ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9    293ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9    227ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6    410ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    188ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0    209ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2    197ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2    428ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    334ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   85.0ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   52.4ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9   56.2ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9   64.7ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6    143ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    539ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0   71.6ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   55.8ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2    124ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    524ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [1/5] done for silicon_primitive
+│   avg.t_scf = 3.411247143
+│   avg.t_forces = 0.11355343233333333
+└   avg.t_stresses = 3.707832589666667
+[ Info: [2/5] Benchmarking iron_supercell on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.103565312                    0.37   146.00   149.40   0.80   11.4     879s
+  2   -6768.372806197       -0.57       -0.20   142.20   148.30   0.80    2.5     429s
+  3   -6768.539814424       -0.78       -0.77   138.00   145.90   0.80    4.5     526s
+  4   -6768.555214996       -1.81       -1.08   135.60   144.30   0.80    2.0     396s
+  5   -6768.560257900       -2.30       -1.38   134.20   142.60   0.80    1.5     379s
+  6   -6768.560859873       -3.22       -1.58   133.60   142.00   0.80    1.0     363s
+  7   -6768.561349963       -3.31       -2.04   132.70   141.10   0.80    1.0     355s
+  8   -6768.561413622       -4.20       -1.87   132.50   140.80   0.80    4.0     433s
+  9   -6768.561435241       -4.67       -1.90   132.40   140.80   0.80    1.4     365s
+ 10   -6768.561649790       -3.67       -1.97   132.10   140.50   0.80    1.0     352s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.103565312                    0.37   146.00   149.40   0.80   11.4     767s
+  2   -6768.372806197       -0.57       -0.20   142.20   148.30   0.80    2.5     389s
+  3   -6768.539814424       -0.78       -0.77   138.00   145.90   0.80    4.5     479s
+  4   -6768.555214996       -1.81       -1.08   135.60   144.30   0.80    2.0     372s
+  5   -6768.560257900       -2.30       -1.38   134.20   142.60   0.80    1.5     359s
+  6   -6768.560859873       -3.22       -1.58   133.60   142.00   0.80    1.0     342s
+  7   -6768.561349963       -3.31       -2.04   132.70   141.10   0.80    1.0     344s
+  8   -6768.561413622       -4.20       -1.87   132.50   140.80   0.80    4.0     421s
+  9   -6768.561435241       -4.67       -1.90   132.40   140.80   0.80    1.4     365s
+ 10   -6768.561649790       -3.67       -1.97   132.10   140.50   0.80    1.0     341s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -6768.103565312                    0.37   146.00   149.40   0.80   11.4     739s
+  2   -6768.372806197       -0.57       -0.20   142.20   148.30   0.80    2.5     395s
+  3   -6768.539814424       -0.78       -0.77   138.00   145.90   0.80    4.5     493s
+  4   -6768.555214996       -1.81       -1.08   135.60   144.30   0.80    2.0     377s
+  5   -6768.560257900       -2.30       -1.38   134.20   142.60   0.80    1.5     365s
+  6   -6768.560859873       -3.22       -1.58   133.60   142.00   0.80    1.0     347s
+  7   -6768.561349963       -3.31       -2.04   132.70   141.10   0.80    1.0     344s
+  8   -6768.561413622       -4.20       -1.87   132.50   140.80   0.80    4.0     425s
+  9   -6768.561435241       -4.67       -1.90   132.40   140.80   0.80    1.4     362s
+ 10   -6768.561649790       -3.67       -1.97   132.10   140.50   0.80    1.0     346s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Info: [2/5] done for iron_supercell
+│   avg.t_scf = 4425.141209296667
+│   avg.t_forces = 50.482834006
+└   avg.t_stresses = 1063.871565155
+[ Info: [3/5] Benchmarking aluminium_supercell on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2948424526                   -0.45   0.80   15.0     212s
+  2   -250.3165181641       -1.66       -0.88   0.80    2.0     245s
+  3   -250.3239407882       -2.13       -2.25   0.80    7.0     257s
+  4   -250.3247347521       -3.10       -2.72   0.80    6.2     261s
+  5   -250.3247623168       -4.56       -3.24   0.80    4.2     258s
+  6   -250.3247667587       -5.35       -4.31   0.80    5.1     261s
+  7   -250.3247669519       -6.71       -4.70   0.80    7.8     273s
+  8   -250.3247669528       -9.03       -5.25   0.80    3.0     251s
+  9   -250.3247669531       -9.61       -6.17   0.80    5.2     260s
+ 10   -250.3247669531      -11.08       -7.11   0.80    6.2     264s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2948424526                   -0.45   0.80   15.0     212s
+  2   -250.3165181641       -1.66       -0.88   0.80    2.0     246s
+  3   -250.3239407882       -2.13       -2.25   0.80    7.0     257s
+  4   -250.3247347521       -3.10       -2.72   0.80    6.2     260s
+  5   -250.3247623168       -4.56       -3.24   0.80    4.2     257s
+  6   -250.3247667587       -5.35       -4.31   0.80    5.1     260s
+  7   -250.3247669519       -6.71       -4.70   0.80    7.8     273s
+  8   -250.3247669528       -9.03       -5.25   0.80    3.0     250s
+  9   -250.3247669531       -9.61       -6.17   0.80    5.2     261s
+ 10   -250.3247669531      -11.08       -7.11   0.80    6.2     264s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -250.2948424526                   -0.45   0.80   15.0     212s
+  2   -250.3165181641       -1.66       -0.88   0.80    2.0     245s
+  3   -250.3239407882       -2.13       -2.25   0.80    7.0     257s
+  4   -250.3247347521       -3.10       -2.72   0.80    6.2     261s
+  5   -250.3247623168       -4.56       -3.24   0.80    4.2     257s
+  6   -250.3247667587       -5.35       -4.31   0.80    5.1     261s
+  7   -250.3247669519       -6.71       -4.70   0.80    7.8     274s
+  8   -250.3247669528       -9.03       -5.25   0.80    3.0     249s
+  9   -250.3247669531       -9.61       -6.17   0.80    5.2     261s
+ 10   -250.3247669531      -11.08       -7.11   0.80    6.2     263s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 1 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Info: [3/5] done for aluminium_supercell
+│   avg.t_scf = 2668.1670160383333
+│   avg.t_forces = 27.193519805000005
+└   avg.t_stresses = 950.6584469093333
+[ Info: [4/5] Benchmarking copt_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -282.4147292780                   -0.28    0.621    0.657   0.80    6.3    1.79s
+  2   -283.5861284455        0.07       -0.94    1.525    1.577   0.80    2.4    790ms
+  3   -283.6325711975       -1.33       -1.08    1.875    1.950   0.80    2.8    797ms
+  4   -283.6364033287       -2.42       -1.20    2.089    2.185   0.80    1.1    615ms
+  5   -283.6375229661       -2.95       -1.32    2.440    2.633   0.80    2.9    817ms
+  6   -283.6381512510       -3.20       -2.15    2.340    2.514   0.80    1.0    620ms
+  7   -283.6381970434       -4.34       -2.51    2.316    2.490   0.80    2.3    732ms
+  8   -283.6382003768       -5.48       -2.76    2.321    2.495   0.80    1.6    655ms
+  9   -283.6382010435       -6.18       -3.19    2.321    2.495   0.80    1.4    640ms
+ 10   -283.6382010894       -7.34       -3.28    2.323    2.497   0.80    1.7    670ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -282.4147292780                   -0.28    0.621    0.657   0.80    6.3    1.81s
+  2   -283.5861284455        0.07       -0.94    1.525    1.577   0.80    2.4    1.25s
+  3   -283.6325711975       -1.33       -1.08    1.875    1.950   0.80    2.8    1.13s
+  4   -283.6364033287       -2.42       -1.20    2.089    2.185   0.80    1.1    1.35s
+  5   -283.6375229661       -2.95       -1.32    2.440    2.633   0.80    2.9    987ms
+  6   -283.6381512510       -3.20       -2.15    2.340    2.514   0.80    1.0    1.46s
+  7   -283.6381970434       -4.34       -2.51    2.316    2.490   0.80    2.3    875ms
+  8   -283.6382003768       -5.48       -2.76    2.321    2.495   0.80    1.6    1.24s
+  9   -283.6382010435       -6.18       -3.19    2.321    2.495   0.80    1.4    645ms
+ 10   -283.6382010894       -7.34       -3.28    2.323    2.497   0.80    1.7    1.46s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   Magnet   |Magn|   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ------   ------   ----   ----   ------
+  1   -282.4147292780                   -0.28    0.621    0.657   0.80    6.3    1.79s
+  2   -283.5861284455        0.07       -0.94    1.525    1.577   0.80    2.4    1.26s
+  3   -283.6325711975       -1.33       -1.08    1.875    1.950   0.80    2.8    820ms
+  4   -283.6364033287       -2.42       -1.20    2.089    2.185   0.80    1.1    1.34s
+  5   -283.6375229661       -2.95       -1.32    2.440    2.633   0.80    2.9    1.09s
+  6   -283.6381512510       -3.20       -2.15    2.340    2.514   0.80    1.0    1.05s
+  7   -283.6381970434       -4.34       -2.51    2.316    2.490   0.80    2.3    1.57s
+  8   -283.6382003768       -5.48       -2.76    2.321    2.495   0.80    1.6    1.13s
+  9   -283.6382010435       -6.18       -3.19    2.321    2.495   0.80    1.4    1.28s
+ 10   -283.6382010894       -7.34       -3.28    2.323    2.497   0.80    1.7    1.00s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [4/5] done for copt_primitive
+│   avg.t_scf = 12.277314444
+│   avg.t_forces = 0.948304727
+└   avg.t_stresses = 18.020172201333335
+[ Info: [5/5] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   84.6ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   59.7ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9   92.3ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9   71.8ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6   87.2ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    128ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0    101ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   69.2ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2   84.4ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0   72.6ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   83.9ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   57.9ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9   62.7ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9   81.8ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6   93.9ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8   90.2ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0   77.4ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   67.5ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2   84.7ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0   62.8ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   83.6ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   55.1ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9   63.2ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9   68.2ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6   71.4ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8   80.8ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0   70.6ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   60.8ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2   83.3ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0   59.3ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [5/5] done for silicon_primitive
+│   avg.t_scf = 1.0059177643333335
+│   avg.t_forces = 0.06643182433333333
+└   avg.t_stresses = 3.514755295666667
+[ Info: Results written incrementally to results/mod2_12rank_4thread.csv
+[ Info: Average timings summary (5/5 systems)
+┌ Info:   silicon_primitive
+│   t_scf = 3.411247143
+│   t_forces = 0.11355343233333333
+└   t_stresses = 3.707832589666667
+┌ Info:   iron_supercell
+│   t_scf = 4425.141209296667
+│   t_forces = 50.482834006
+└   t_stresses = 1063.871565155
+┌ Info:   aluminium_supercell
+│   t_scf = 2668.1670160383333
+│   t_forces = 27.193519805000005
+└   t_stresses = 950.6584469093333
+┌ Info:   copt_primitive
+│   t_scf = 12.277314444
+│   t_forces = 0.948304727
+└   t_stresses = 18.020172201333335
+┌ Info:   silicon_primitive
+│   t_scf = 1.0059177643333335
+│   t_forces = 0.06643182433333333
+└   t_stresses = 3.514755295666667

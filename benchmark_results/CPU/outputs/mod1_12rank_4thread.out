@@ -1,0 +1,1501 @@
+cpu-bind=MASK - nid005314, task  0  0 [176534]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  1  1 [176535]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  2  2 [176536]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  3  3 [176537]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  4  4 [176538]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  5  5 [176539]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  6  6 [176540]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  7  7 [176541]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  8  8 [176542]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task  9  9 [176543]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task 10 10 [176544]: mask 0xffffffffffffffffff000000000000000000 set
+cpu-bind=MASK - nid005314, task 11 11 [176545]: mask 0xffffffffffffffffff000000000000000000 set
+]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia]0;Julia┌ Info: Threading setup: 
+│   Threads.nthreads() = 4
+│   n_DFTK = 4
+│   n_fft = 1
+└   n_blas = 4
+┌ Info: Running DFTK paper benchmarks
+│   systems = 9-element Vector{String}: …
+│   output = "results/mod1_12rank_4thread.csv"
+│   architecture = DFTK.CPU()
+│   nrepeats = 3
+│   warmup = false
+│   compute_forces = true
+│   compute_stresses = true
+│   verbose = true
+└   mpi_ranks = 12
+[ Info: [1/9] Benchmarking silicon_primitive on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5    1.33s
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0    904ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9    366ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9    221ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6   63.6ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    318ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0    629ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2   74.2ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2    101ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    402ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   86.1ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   55.5ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9    286ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9    109ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6    435ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    206ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0    101ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2    294ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2    329ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    282ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -8.460177709960                   -0.96   0.80    6.5   80.2ms
+  2   -8.462105623545       -2.71       -1.79   0.80    1.0   53.5ms
+  3   -8.462244223698       -3.86       -2.91   0.80    1.9    173ms
+  4   -8.462253543952       -5.03       -3.43   0.80    2.9   79.4ms
+  5   -8.462253620791       -7.11       -4.03   0.80    1.6    117ms
+  6   -8.462253627079       -8.20       -5.26   0.80    1.8    502ms
+  7   -8.462253627353       -9.56       -5.68   0.80    3.0   72.8ms
+  8   -8.462253627355      -11.73       -7.00   0.80    1.2    175ms
+  9   -8.462253627355      -13.02       -7.11   0.80    3.2    119ms
+ 10   -8.462253627355      -14.75       -8.23   0.80    1.0    296ms
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Info: [1/9] done for silicon_primitive
+│   avg.t_scf = 3.209168813
+│   avg.t_forces = 0.08642167366666666
+└   avg.t_stresses = 3.873122519666667
+[ Info: [2/9] Benchmarking mos2_supercell on DFTK.CPU() (3 repeats, warmup=false, forces=true, stresses=true) ...
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+n     Energy            log10(ΔE)   log10(Δρ)   α      Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ----   ------
+  1   -1475.100886905                    0.07   0.80   25.1     747s
+  2   -1479.120059556        0.60       -0.50   0.80    4.9     201s
+  3   -1479.180743073       -1.22       -0.85   0.80    7.2     251s
+  4   -1479.187783825       -2.15       -1.47   0.80    2.0     139s
+  5   -1479.189250129       -2.83       -1.99   0.80    1.4     142s
+  6   -1479.189337627       -4.06       -2.17   0.80    3.2     188s
+  7   -1479.189472239       -3.87       -2.65   0.80    1.5     157s
+  8   -1479.189491482       -4.72       -3.09   0.80    4.2     198s
+  9   -1479.189495558       -5.39       -3.71   0.80    3.7     216s
+ 10   -1479.189495903       -6.46       -4.19   0.80    5.5     250s
+┌ Warning: SCF not converged.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/scf/scf_callbacks.jl:66
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+┌ Warning: Attempting to parallelize 2 k-points over 12 MPI ranks. DFTK does not support processes empty of k-point. Some k-points were duplicated over the extra ranks with scaled weights.
+└ @ DFTK /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/PlaneWaveBasis.jl:200
+[2026-11-18T13:29:47.538] error: Detected 1 oom_kill event in StepId=5378464.3. Some of the step tasks have been OOM Killed.
+[2026-11-18T13:29:47.651] error: *** STEP 5378464.3 ON nid005314 CANCELLED AT 2026-11-18T13:29:47 DUE TO TASK FAILURE ***
+
+[176537] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176542] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176538] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176539] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176544] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176545] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176534] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176536] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176543] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176541] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+
+[176540] signal 15: Terminated
+in expression starting at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:215
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+epoll_pwait at /lib64/libc.so.6 (unknown line)
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_backend_poll_once! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/epoll.jl:272
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_main! at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:475
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+_poller_thread_entry at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/Reseau/yMfYI/src/iopoll/runtime.jl:497
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+jlcapi__poller_thread_entry_21182 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/compiled/v1.12/Reseau/vKBJ8_Yj8LJ.so (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jl_parallel_gc_threadfun at /cache/build/builder-armageddon-8/julialang/julia-ci/src/gc-stock.c:3645
+start_thread at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+task_done_hook at ./task.jl:868
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+task_done_hook at ./task.jl:868
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+task_done_hook at ./task.jl:868
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+poptask at ./task.jl:1216
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+poptask at ./task.jl:1216
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+__GI___futex_abstimed_wait_cancelable64 at /lib64/libc.so.6 (unknown line)
+pthread_cond_wait at /lib64/libc.so.6 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:822
+ijl_task_get_next at /cache/build/builder-armageddon-8/julialang/julia-ci/src/scheduler.c:523
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+poptask at ./task.jl:1216
+poptask at ./task.jl:1216
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+poptask at ./task.jl:1216
+task_done_hook at ./task.jl:868
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+wait at ./task.jl:1228
+wait at ./task.jl:1228
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+task_done_hook at ./task.jl:868
+unknown function (ip: (nil)) at (unknown file)
+task_done_hook at ./task.jl:868
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+jfptr_task_done_hook_38093 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+jl_finish_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:342
+start_task at /cache/build/builder-armageddon-8/julialang/julia-ci/src/task.c:1264
+unknown function (ip: (nil)) at (unknown file)
+zgemm_itcopy_NEOVERSEV1 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+getindex at ./essentials.jl:920 [inlined]
+getindex at ./array.jl:929 [inlined]
+getindex at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/adjtrans.jl:343 [inlined]
+_getindex at ./abstractarray.jl:1388 [inlined]
+getindex at ./abstractarray.jl:1342 [inlined]
+_broadcast_getindex at ./broadcast.jl:665 [inlined]
+_getindex at ./broadcast.jl:695 [inlined]
+_broadcast_getindex at ./broadcast.jl:671 [inlined]
+_getindex at ./broadcast.jl:620 [inlined]
+getindex at ./broadcast.jl:616 [inlined]
+macro expansion at ./broadcast.jl:995 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:994 [inlined]
+copyto! at ./broadcast.jl:947 [inlined]
+copy at ./broadcast.jl:919 [inlined]
+materialize at ./broadcast.jl:894 [inlined]
+#dual_matrix_value_and_partials##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+getindex at ./essentials.jl:920 [inlined]
+getindex at ./array.jl:929 [inlined]
+getindex at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/adjtrans.jl:343 [inlined]
+_getindex at ./abstractarray.jl:1388 [inlined]
+getindex at ./abstractarray.jl:1342 [inlined]
+_broadcast_getindex at ./broadcast.jl:665 [inlined]
+_getindex at ./broadcast.jl:695 [inlined]
+_broadcast_getindex at ./broadcast.jl:671 [inlined]
+_getindex at ./broadcast.jl:620 [inlined]
+getindex at ./broadcast.jl:616 [inlined]
+macro expansion at ./broadcast.jl:995 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:994 [inlined]
+copyto! at ./broadcast.jl:947 [inlined]
+copy at ./broadcast.jl:919 [inlined]
+materialize at ./broadcast.jl:894 [inlined]
+#dual_matrix_value_and_partials##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+getindex at ./essentials.jl:920 [inlined]
+getindex at ./array.jl:929 [inlined]
+getindex at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/adjtrans.jl:343 [inlined]
+_getindex at ./abstractarray.jl:1388 [inlined]
+getindex at ./abstractarray.jl:1342 [inlined]
+_broadcast_getindex at ./broadcast.jl:665 [inlined]
+_getindex at ./broadcast.jl:695 [inlined]
+_broadcast_getindex at ./broadcast.jl:671 [inlined]
+_getindex at ./broadcast.jl:620 [inlined]
+getindex at ./broadcast.jl:616 [inlined]
+macro expansion at ./broadcast.jl:995 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:994 [inlined]
+copyto! at ./broadcast.jl:947 [inlined]
+copy at ./broadcast.jl:919 [inlined]
+materialize at ./broadcast.jl:894 [inlined]
+#dual_matrix_value_and_partials##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+getindex at ./essentials.jl:920 [inlined]
+getindex at ./array.jl:929 [inlined]
+getindex at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/adjtrans.jl:343 [inlined]
+_getindex at ./abstractarray.jl:1388 [inlined]
+getindex at ./abstractarray.jl:1342 [inlined]
+_broadcast_getindex at ./broadcast.jl:665 [inlined]
+_getindex at ./broadcast.jl:695 [inlined]
+_broadcast_getindex at ./broadcast.jl:671 [inlined]
+_getindex at ./broadcast.jl:620 [inlined]
+getindex at ./broadcast.jl:616 [inlined]
+macro expansion at ./broadcast.jl:995 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:994 [inlined]
+copyto! at ./broadcast.jl:947 [inlined]
+copy at ./broadcast.jl:919 [inlined]
+materialize at ./broadcast.jl:894 [inlined]
+#dual_matrix_value_and_partials##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+getindex at ./essentials.jl:920 [inlined]
+getindex at ./array.jl:929 [inlined]
+getindex at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/adjtrans.jl:343 [inlined]
+_getindex at ./abstractarray.jl:1388 [inlined]
+getindex at ./abstractarray.jl:1342 [inlined]
+_broadcast_getindex at ./broadcast.jl:665 [inlined]
+_getindex at ./broadcast.jl:695 [inlined]
+_broadcast_getindex at ./broadcast.jl:671 [inlined]
+_getindex at ./broadcast.jl:620 [inlined]
+getindex at ./broadcast.jl:616 [inlined]
+macro expansion at ./broadcast.jl:995 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:994 [inlined]
+copyto! at ./broadcast.jl:947 [inlined]
+copy at ./broadcast.jl:919 [inlined]
+materialize at ./broadcast.jl:894 [inlined]
+#dual_matrix_value_and_partials##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+ntuple at ./ntuple.jl:19 [inlined]
+dual_matrix_value_and_partials at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+ntuple at ./ntuple.jl:19 [inlined]
+dual_matrix_value_and_partials at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+ntuple at ./ntuple.jl:19 [inlined]
+dual_matrix_value_and_partials at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+ntuple at ./ntuple.jl:19 [inlined]
+dual_matrix_value_and_partials at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+ntuple at ./ntuple.jl:19 [inlined]
+dual_matrix_value_and_partials at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:17
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:28
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:28
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:28
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:28
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:28
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000d04c01af) at (unknown file)
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000e74a01af) at (unknown file)
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000f7dd01af) at (unknown file)
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000eda901af) at (unknown file)
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000e55001af) at (unknown file)
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000d034052f) at (unknown file)
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000e736052f) at (unknown file)
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000f7d1052f) at (unknown file)
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000ed93052f) at (unknown file)
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000e53e052f) at (unknown file)
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000d018054b) at (unknown file)
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000f7b5054b) at (unknown file)
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000e718054b) at (unknown file)
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000ed79054b) at (unknown file)
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000e520054b) at (unknown file)
+collect at ./array.jl:800
+collect at ./array.jl:800
+collect at ./array.jl:800
+collect at ./array.jl:800
+collect at ./array.jl:800
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000cfe004db) at (unknown file)
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000f77d04db) at (unknown file)
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000e6e204db) at (unknown file)
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000e4e804db) at (unknown file)
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000ed4104db) at (unknown file)
+HF_energy at ./none (unknown line)
+HF_energy at ./none (unknown line)
+HF_energy at ./none (unknown line)
+HF_energy at ./none (unknown line)
+#compute_stresses_cart##1 at ./none (unknown line)
+#compute_stresses_cart##1 at ./none (unknown line)
+HF_energy at ./none (unknown line)
+#compute_stresses_cart##1 at ./none (unknown line)
+#compute_stresses_cart##1 at ./none (unknown line)
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+#compute_stresses_cart##1 at ./none (unknown line)
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+unknown function (ip: 0x4000ca6b0cb3) at (unknown file)
+unknown function (ip: 0x4000cf960cb3) at (unknown file)
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+unknown function (ip: 0x4000d6c60cb3) at (unknown file)
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+unknown function (ip: 0x4000df070cb3) at (unknown file)
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+unknown function (ip: 0x4000d6fd0ca3) at (unknown file)
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x40009a6a011b) at (unknown file)
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x4000a1cb011b) at (unknown file)
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x4000a996011b) at (unknown file)
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x4000af87011b) at (unknown file)
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x4000a9a0011b) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x40009a3d0b37) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x4000a1a10b37) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x4000a9610b37) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x4000af570b37) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x4000a97a0b37) at (unknown file)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+eval at ./boot.jl:489
+eval at ./boot.jl:489
+eval at ./boot.jl:489
+eval at ./boot.jl:489
+eval at ./boot.jl:489
+include_string at ./loading.jl:2952
+include_string at ./loading.jl:2952
+include_string at ./loading.jl:2952
+include_string at ./loading.jl:2952
+include_string at ./loading.jl:2952
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 201230338 (Pool: 201226240; Big: 4098); GC: 640
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194253067 (Pool: 194249003; Big: 4064); GC: 638
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194322597 (Pool: 194318533; Big: 4064); GC: 653
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+exec_blas at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+gemm_driver.isra.0 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194303500 (Pool: 194299436; Big: 4064); GC: 641
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194319257 (Pool: 194315193; Big: 4064); GC: 635
+zgemm_thread_nn at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+zgemm_64_ at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/../lib/julia/libopenblas64_.so (unknown line)
+_include at ./loading.jl:3012
+_include at ./loading.jl:3012
+_include at ./loading.jl:3012
+_include at ./loading.jl:3012
+_include at ./loading.jl:3012
+include at ./Base.jl:306
+include at ./Base.jl:306
+include at ./Base.jl:306
+include at ./Base.jl:306
+include at ./Base.jl:306
+exec_options at ./client.jl:317
+exec_options at ./client.jl:317
+exec_options at ./client.jl:317
+exec_options at ./client.jl:317
+exec_options at ./client.jl:317
+_start at ./client.jl:550
+_start at ./client.jl:550
+_start at ./client.jl:550
+_start at ./client.jl:550
+_start at ./client.jl:550
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194368541 (Pool: 194364477; Big: 4064); GC: 646
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194297110 (Pool: 194293046; Big: 4064); GC: 647
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194318211 (Pool: 194314147; Big: 4064); GC: 630
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194323887 (Pool: 194319823; Big: 4064); GC: 646
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194314772 (Pool: 194310708; Big: 4064); GC: 637
+gemm! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/blas.jl:1642
+gemm_wrapper! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/matmul.jl:806 [inlined]
+_syrk_herk_gemm_wrapper! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/matmul.jl:533 [inlined]
+generic_matmatmul_wrapper! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/matmul.jl:507
+_mul! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/matmul.jl:328 [inlined]
+mul! at /cache/build/builder-armageddon-8/julialang/julia-ci/usr/share/julia/stdlib/v1.12/LinearAlgebra/src/matmul.jl:297 [inlined]
+#_dual_mul!##0 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:58
+unknown function (ip: 0x4000b3930707) at (unknown file)
+ntuple at ./ntuple.jl:19 [inlined]
+_dual_mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:44
+mul! at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:113 [inlined]
+* at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/workarounds/forwarddiff_gemm.jl:132
+unknown function (ip: 0x4000b38101af) at (unknown file)
+#ene_ops#556 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31
+ene_ops at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/nonlocal.jl:31 [inlined]
+#energy#431 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:33 [inlined]
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/terms.jl:32 [inlined]
+#494 at ./none (unknown line)
+unknown function (ip: 0x4000b377052f) at (unknown file)
+iterate at ./generator.jl:48 [inlined]
+collect_to! at ./array.jl:848
+collect_to_with_first! at ./array.jl:826
+unknown function (ip: 0x4000b35d054b) at (unknown file)
+collect at ./array.jl:800
+#energy#491 at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+energy at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/terms/Hamiltonian.jl:234
+unknown function (ip: 0x4000b32504db) at (unknown file)
+HF_energy at ./none (unknown line)
+#compute_stresses_cart##1 at ./none (unknown line)
+chunk_mode_gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:144
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:22 [inlined]
+gradient at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/packages/ForwardDiff/ix15H/src/gradient.jl:17 [inlined]
+compute_stresses_cart at /ritom/scratch/cscs/abussy/dftk_daint/DFTK.jl/src/postprocess/stresses.jl:28
+unknown function (ip: 0x4000aea60ca3) at (unknown file)
+macro expansion at ./timing.jl:461 [inlined]
+#benchmark_system#26 at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:152
+benchmark_system at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/src/timing.jl:93
+unknown function (ip: 0x40007eed011b) at (unknown file)
+main at /ritom/scratch/cscs/abussy/dftk_daint/GPUPaperBenchmarks.jl/scripts/run_benchmarks.jl:167
+unknown function (ip: 0x40007ecb0b37) at (unknown file)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+do_call at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:123
+eval_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:243
+eval_stmt_value at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:194 [inlined]
+eval_body at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:707
+jl_interpret_toplevel_thunk at /cache/build/builder-armageddon-8/julialang/julia-ci/src/interpreter.c:898
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1035
+jl_toplevel_eval_flex at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:975
+ijl_toplevel_eval at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1047
+ijl_toplevel_eval_in at /cache/build/builder-armageddon-8/julialang/julia-ci/src/toplevel.c:1092
+eval at ./boot.jl:489
+include_string at ./loading.jl:2952
+_include at ./loading.jl:3012
+include at ./Base.jl:306
+exec_options at ./client.jl:317
+_start at ./client.jl:550
+jfptr__start_51652 at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/lib/julia/sys.so (unknown line)
+jl_apply at /cache/build/builder-armageddon-8/julialang/julia-ci/src/julia.h:2394 [inlined]
+true_main at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:985
+jl_repl_entrypoint at /cache/build/builder-armageddon-8/julialang/julia-ci/src/jlapi.c:1153
+main at /cache/build/builder-armageddon-8/julialang/julia-ci/cli/loader_exe.c:58
+$x at /lib64/libc.so.6 (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+$x at /ritom/scratch/cscs/abussy/.julia/gh200/juliaup/depot/juliaup/julia-1.12.7+0.aarch64.linux.gnu/bin/julia (unknown line)
+unknown function (ip: (nil)) at (unknown file)
+Allocations: 194316456 (Pool: 194312392; Big: 4064); GC: 658
