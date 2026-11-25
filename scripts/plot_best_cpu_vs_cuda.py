@@ -47,13 +47,14 @@ import numpy as np
 import pandas as pd
 
 from plot_cpu_vs_gpu import (
-    METRIC_LABELS,
     MODE,
     MODE_METRICS,
+    MODE_YLABELS,
     OUTPUT_DIR,
     RESULTS_DIR,
     SYSTEM_LABELS,
     Y_SCALE,
+    add_legend,
     draw_grouped_bars,
     speedup_vs_baseline,
 )
@@ -236,22 +237,17 @@ def plot_comparison(data: pd.DataFrame, y_scale: str, mode: str) -> plt.Figure:
     x = np.arange(n_systems)
     width = 0.8 / n_arch
 
-    metrics_label = " + ".join(METRIC_LABELS.get(m, m) for m in MODE_METRICS[mode])
-    arch_list = " vs ".join(archs)
-    ylabel = f"{metrics_label} (s)"
-    title = f"{metrics_label} per system ({arch_list}, fastest configuration)"
+    ylabel = f"{MODE_YLABELS[mode]} (s)"
 
     values = mode_totals(data, mode)
     label_values = speedup_vs_baseline(values)
 
-    fig, ax = plt.subplots(figsize=(max(10, 0.75 * n_systems), 5.5))
+    fig, ax = plt.subplots(figsize=(max(10, 0.75 * n_systems), 6.0))
 
     draw_grouped_bars(ax, values, archs, x, width, label_values)
-    ax.legend(loc="upper left")
 
     ax.set_yscale(y_scale)
     ax.set_ylabel(ylabel)
-    ax.set_title(title)
     ax.set_xticks(x, [SYSTEM_LABELS.get(system, system) for system in data.index])
     plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
     # Shift x tick labels a tiny bit to the right (screen-space points).
@@ -262,6 +258,9 @@ def plot_comparison(data: pd.DataFrame, y_scale: str, mode: str) -> plt.Figure:
     ax.set_axisbelow(True)
 
     fig.tight_layout()
+    # Legend last, on the final layout, so the headroom computation
+    # measures the finished figure.
+    add_legend(ax, n_arch)
     return fig
 
 

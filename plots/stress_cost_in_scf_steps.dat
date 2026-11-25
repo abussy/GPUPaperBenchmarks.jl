@@ -1,0 +1,21 @@
+# cost of one stress calculation in units of SCF steps (1 rank / 1 thread)
+# ratio = t_stresses / (t_scf / n_scfiter), averaged over repeats
+# system                       CPU_steps      CUDA_steps    AMDGPU_steps    CPU_nscf   CUDA_nscf AMDGPU_nscf
+aluminium_primitive              14.48            1.43            4.57          10          10          10
+aluminium_supercell               2.77            4.14            2.55          10          10          10
+copt_primitive                    7.48            4.09            4.45          10          10          10
+copt_supercell                    2.10            3.84            2.18          10          10          10
+gaas_110_slab                     0.73            1.99            1.51          10          10          10
+gold_111_slab                     1.23            3.56            2.92          10          10          10
+hbn_primitive                    15.86            5.55            5.48          10          10          10
+hbn_supercell                     5.15            5.12            3.64          10          10          10
+iron_primitive                    8.57            1.81            3.00          10          10          10
+iron_supercell                    1.41            2.49            1.80          10          10          10
+mgo_primitive                    10.32            2.89            5.84          10          10          10
+mgo_supercell                     2.60            4.05            3.40          10          10          10
+mos2_primitive                    8.31            3.03            4.22          10          10          10
+mos2_supercell                    1.31            2.06            1.88          10          10          10
+silicon_primitive                17.94            2.32            5.52          10          10          10
+silicon_supercell                 4.31            5.19            3.44          10          10          10
+zro2_primitive                    7.85            6.23            3.97          10          10          10
+zro2_supercell                    1.22            2.08            1.41          10          10          10
