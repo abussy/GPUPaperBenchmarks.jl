@@ -1,0 +1,7 @@
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+srun: Step created for StepId=5464397.1
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP

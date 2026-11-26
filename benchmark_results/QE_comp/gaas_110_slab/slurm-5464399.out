@@ -1,0 +1,7 @@
+MPICH ERROR [Rank 0] [job id 5464399.0] [Thu Nov 26 17:27:02 2026] [nid005936] - Abort(1) (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+
+srun: error: nid005936: task 0: Exited with exit code 1
+srun: Terminating StepId=5464399.0
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
