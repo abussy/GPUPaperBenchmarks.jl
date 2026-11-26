@@ -1,0 +1,47 @@
+! Generated from the corresponding DFTK benchmark setup.
+! DFTK uses Hartree; QE cutoffs and smearing below use Rydberg.
+&CONTROL
+  calculation = 'scf'
+  prefix = 'aluminium_primitive'
+  pseudo_dir = './pseudo/'
+  outdir = './out/'
+  tprnfor = .true.
+  tstress = .false.
+  disk_io = 'none'
+/
+
+&SYSTEM
+  ibrav = 0
+  nat = 1
+  ntyp = 1
+  ecutwfc = 40.0000000000
+  ecutrho = 160.0000000000
+  nr1 = 24
+  nr2 = 24
+  nr3 = 24
+  input_dft = 'PBE'
+  occupations = 'smearing'
+  smearing = 'gaussian'
+  degauss = 2.000000000000e-02
+  nspin = 1
+/
+
+&ELECTRONS
+  electron_maxstep = 10
+  conv_thr = 0.0d0
+  scf_must_converge = .false.
+/
+
+ATOMIC_SPECIES
+  Al  26.98153840  Al.upf
+
+ATOMIC_POSITIONS crystal
+  Al  0.0000000000000000  0.0000000000000000  -0.0000000000000000
+
+K_POINTS automatic
+  8 8 8  0 0 0
+
+CELL_PARAMETERS bohr
+  0.0000000000000000  3.8266954023671844  3.8266954023671844
+  3.8266954023671844  0.0000000000000000  3.8266954023671844
+  3.8266954023671844  3.8266954023671844  0.0000000000000000

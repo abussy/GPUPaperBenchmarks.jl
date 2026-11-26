@@ -1,0 +1,51 @@
+! Generated from the corresponding DFTK benchmark setup.
+! DFTK uses Hartree; QE cutoffs and smearing below use Rydberg.
+&CONTROL
+  calculation = 'scf'
+  prefix = 'copt_primitive'
+  pseudo_dir = './pseudo/'
+  outdir = './out/'
+  tprnfor = .true.
+  tstress = .false.
+  disk_io = 'none'
+/
+
+&SYSTEM
+  ibrav = 0
+  nat = 2
+  ntyp = 2
+  ecutwfc = 96.0000000000
+  ecutrho = 384.0000000000
+  nr1 = 36
+  nr2 = 36
+  nr3 = 45
+  input_dft = 'PBE'
+  occupations = 'smearing'
+  smearing = 'gaussian'
+  degauss = 2.000000000000e-02
+  nspin = 2
+  starting_magnetization(1) = 1.800000000000
+  starting_magnetization(2) = 0.000000000000
+/
+
+&ELECTRONS
+  electron_maxstep = 10
+  conv_thr = 0.0d0
+  scf_must_converge = .false.
+/
+
+ATOMIC_SPECIES
+  Co  58.93319400  Co.upf
+  Pt  195.08400000  Pt.upf
+
+ATOMIC_POSITIONS crystal
+  Co  0.0000000000000000  0.0000000000000000  0.0000000000000000
+  Pt  0.5000000000000000  0.5000000000000000  0.5000000000000000
+
+K_POINTS automatic
+  8 8 8  0 0 0
+
+CELL_PARAMETERS bohr
+  5.0682454662463154  0.0000000000000000  0.0000000000000000
+  0.0000000000000000  5.0682454662463154  0.0000000000000000
+  0.0000000000000000  0.0000000000000000  7.0184428268601105

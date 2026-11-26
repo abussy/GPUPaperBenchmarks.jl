@@ -1,0 +1,45 @@
+! Generated from the corresponding DFTK benchmark setup.
+! DFTK uses Hartree; QE cutoffs and smearing below use Rydberg.
+&CONTROL
+  calculation = 'scf'
+  prefix = 'silicon_primitive'
+  pseudo_dir = './pseudo/'
+  outdir = './out/'
+  tprnfor = .false.
+  tstress = .false.
+  disk_io = 'none'
+/
+
+&SYSTEM
+  ibrav = 0
+  nat = 2
+  ntyp = 1
+  ecutwfc = 36.0000000000
+  ecutrho = 144.0000000000
+  nr1 = 32
+  nr2 = 32
+  nr3 = 32
+  input_dft = 'PBE'
+  occupations = 'fixed'
+  nspin = 1
+/
+
+&ELECTRONS
+  conv_thr = 2.0d-10
+  scf_must_converge = .true.
+/
+
+ATOMIC_SPECIES
+  Si  28.08500000  Si.upf
+
+ATOMIC_POSITIONS crystal
+  Si  0.0000000000000000  0.0000000000000000  -0.0000000000000000
+  Si  0.2500000000000000  0.2500000000000000  0.2500000000000000
+
+K_POINTS automatic
+  8 8 8  0 0 0
+
+CELL_PARAMETERS bohr
+  0.0000000000000000  5.1306064283589654  5.1306064283589654
+  5.1306064283589654  0.0000000000000000  5.1306064283589654
+  5.1306064283589654  5.1306064283589654  0.0000000000000000
